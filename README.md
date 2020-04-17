@@ -21,23 +21,20 @@ $ npm run start:h2
 .
 ├──project
 │   ├── homework_1
-│   │   ├── dist
-│   │   │   ├── html
-│   │   │   ├── images
-│   │   │   ├── js
-│   │   │   └── css
-│   │   ├── src
+│   │   ├── _src
 │   │   │   ├── _html
 │   │   │   ├── _images
 │   │   │   ├── _js
 │   │   │   └── _scss
+│   │   ├── css
+│   │   ├── js
+│   │   ├── images
 │   │   ├── index.html
 │   │   └── README.md
 │   └── homework_2
 │       ├── assets
 │       │   ├── css
 │       │   ├── images
-│       │   └── images
 │       ├── html
 │       ├── index.html
 │       └── README.md

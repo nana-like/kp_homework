@@ -26,24 +26,6 @@ var dist = root + "/dist";
 
 var paths;
 
-function getSrcPath(src) {
-  return paths = {
-    html: src + "/**/*.html",
-    scss: src + "/scss/**/*.scss",
-    image: src + "/images/**/*",
-    js: src + "/js/**/*.js"
-  };
-}
-
-function getDistPath(dist) {
-  return paths = {
-    html: src + "/**/*.html",
-    scss: src + "/scss/**/*.scss",
-    image: src + "/images/**/*",
-    js: src + "/js/**/*.js"
-  };
-}
-
 // 타임스탬프용 날짜 생성
 Object.defineProperty(Date.prototype, "YYYYMMDDHHMMSS", {
   value: function () {
@@ -76,13 +58,13 @@ var sassOptions = {
 
 function sassCompile(project) {
 
-  var scss = root[project] + "/src/_scss/**/*.scss";
-  var distLoc = root[project] + "/dist/css/";
+  var srcLoc = root[project] + "/_src/_scss/**/*.scss";
+  var distLoc = root[project] + "/css/";
   var myDate = new Date().YYYYMMDDHHMMSS();
 
   return (
     gulp
-    .src(scss)
+    .src(srcLoc)
     .pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on("error", sass.logError))
     .pipe(
@@ -105,30 +87,20 @@ function sassCompile(project) {
   );
 }
 
-// gulp.task("sass", function (project) {
-//   sassCompile();
-// });
-
-// HTML include 정의
-gulp.task("fileinclude", function () {
+function htmlInclude(project) {
+  var srcLoc = root[project] + "/_src/_html/index.html";
+  var distLoc = root[project] + "/";
   return gulp
-    .src(paths.html)
+    .src(srcLoc)
     .pipe(
       fileinclude({
         prefix: "@@",
         basepath: "@file",
-        context: {
-          required: "",
-          error: "",
-          login: "",
-          status: "",
-          btnPage: "",
-          type: ""
-        }
       })
     )
-    .pipe(gulp.dest(dist));
-});
+    .pipe(gulp.dest(distLoc));
+}
+
 
 // 이미지 압축 정의
 gulp.task("imagemin", function () {
@@ -185,46 +157,6 @@ gulp.task("combine:js", function () {
     .pipe(gulp.dest(dist + "/js"));
 });
 
-gulp.task("watch", function () {
-  gulp.watch(
-    paths.scss, {
-      interval: 500
-    },
-    ["sass"]
-  );
-  gulp.watch(
-    paths.html, {
-      interval: 100
-    },
-    ["fileinclude", "reload"]
-  );
-  gulp.watch(
-    dist + "/index.html", {
-      interval: 500
-    },
-    ["minify:html"]
-  );
-  gulp.watch(
-    paths.image, {
-      interval: 800
-    },
-    ["imagemin"]
-  );
-  gulp.watch(
-    paths.js, {
-      interval: 800
-    },
-    ["combine:js"]
-  );
-});
-
-gulp.task(
-  "default",
-  ["fileinclude", "minify:html", "imagemin", "sass", "combine:js", "browserSync", "watch"],
-  function () {
-    console.log("걸프가 일하고 있어요 ;)");
-  }
-);
 
 
 gulp.task(
@@ -232,5 +164,56 @@ gulp.task(
   function () {
     sassCompile("h1");
     console.log("👋 h1 폴더의 scss를 컴파일 했습니다.");
+  }
+);
+
+gulp.task(
+  "htmlInclude:h1",
+  function () {
+    htmlInclude("h1");
+    console.log("👋 h1 폴더의 html을 인클루드 했습니다.");
+  }
+);
+
+
+
+gulp.task("watch:h1", function () {
+  gulp.watch(
+    root.h1 + "/_src/_scss/**/*.scss", {
+      interval: 500
+    },
+    ["sass:h1"]
+  );
+  gulp.watch(
+    root.h1 + "/_src/_html/**/*.html", {
+      interval: 100
+    },
+    ["htmlInclude:h1", "reload"]
+  );
+  // gulp.watch(
+  //   dist + "/index.html", {
+  //     interval: 500
+  //   },
+  //   ["minify:html"]
+  // );
+  // gulp.watch(
+  //   paths.image, {
+  //     interval: 800
+  //   },
+  //   ["imagemin"]
+  // );
+  // gulp.watch(
+  //   paths.js, {
+  //     interval: 800
+  //   },
+  //   ["combine:js"]
+  // );
+});
+
+gulp.task(
+  "dev:h1",
+  ["htmlInclude:h1", "sass:h1", "browserSync:h1", "watch:h1"],
+  function () {
+    console.log("👋 걸프가 h1을 위해 일하고 있어요 ;)");
   }
 );
