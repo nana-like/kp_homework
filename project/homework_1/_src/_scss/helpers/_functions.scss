@@ -1,0 +1,17 @@
+// ** functions.scss
+
+$max: 750;
+
+@function getPercent($px) {
+  $size: $px/$max * 100%;
+  @return $size;
+}
+
+@mixin percentHeight($height) {
+  padding-bottom: getPercent($height);
+}
+
+@mixin percentSize($width, $height) {
+  width: getPercent($width);
+  padding-bottom: getPercent($height);
+}

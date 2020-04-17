@@ -1,0 +1,45 @@
+// ** top-bar.scss
+
+// 최상단 바
+.top-bar {
+
+  //이미지 공통 파일명
+  $_imgName: top-bar;
+
+  position: relative;
+  width: 100%;
+  @include percentHeight(70);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #604733;
+
+  // 이너
+  &__inner {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
+  // 왼쪽 로고
+  &__logo {
+    position: absolute;
+    left: getPercent(20);
+    @include percentSize(110, 22);
+    @include bgi("#{$_imgName}-logo");
+  }
+
+  &__text {
+    @include percentSize(176, 22);
+    margin: 0 auto;
+    @include bgi("#{$_imgName}-text");
+  }
+
+  &__logo-sm {
+    position: absolute;
+    top: -120%;
+    right: 0;
+    @include percentSize(185, 148);
+    @include bgi("#{$_imgName}-logo-sm");
+  }
+
+}

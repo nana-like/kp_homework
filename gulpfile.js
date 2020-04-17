@@ -103,12 +103,17 @@ function htmlInclude(project) {
 
 
 // 이미지 압축 정의
-gulp.task("imagemin", function () {
+
+function imageMinify(project) {
+  var srcLoc = root[project] + "/_src/_images/*";
+  var distLoc = root[project] + "/images/";
+
   return gulp
-    .src(paths.image)
+    .src(srcLoc)
     .pipe(imagemin())
-    .pipe(gulp.dest(dist + "/images"));
-});
+    .pipe(gulp.dest(distLoc));
+}
+
 
 // Browser-sync 정의
 gulp.task("reload", function () {
@@ -175,6 +180,13 @@ gulp.task(
   }
 );
 
+gulp.task(
+  "imageMinify:h1",
+  function () {
+    imageMinify("h1");
+    console.log("👋 h1 폴더의 이미지를 압축 했습니다.");
+  }
+)
 
 
 gulp.task("watch:h1", function () {
@@ -196,12 +208,12 @@ gulp.task("watch:h1", function () {
   //   },
   //   ["minify:html"]
   // );
-  // gulp.watch(
-  //   paths.image, {
-  //     interval: 800
-  //   },
-  //   ["imagemin"]
-  // );
+  gulp.watch(
+    root.h1 + "/_src/_images/*", {
+      interval: 800
+    },
+    ["imageMinify:h1"]
+  );
   // gulp.watch(
   //   paths.js, {
   //     interval: 800
@@ -212,7 +224,7 @@ gulp.task("watch:h1", function () {
 
 gulp.task(
   "dev:h1",
-  ["htmlInclude:h1", "sass:h1", "browserSync:h1", "watch:h1"],
+  ["htmlInclude:h1", "sass:h1", "imageMinify:h1", "browserSync:h1", "watch:h1"],
   function () {
     console.log("👋 걸프가 h1을 위해 일하고 있어요 ;)");
   }

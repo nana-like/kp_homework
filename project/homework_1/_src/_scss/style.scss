@@ -8,6 +8,7 @@
 @import "helpers/variables";
 @import "helpers/mixins";
 @import "helpers/mediaqueries";
+@import "helpers/functions";
 
 @import "base/reset";
 @import "base/svg";
@@ -15,6 +16,9 @@
 @import "base/animation";
 
 @import "modules/buttons";
+
+@import "layout/top-bar";
+@import "layout/layout";
 
 /*! 
 
