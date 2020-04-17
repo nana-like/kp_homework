@@ -1,0 +1,77 @@
+// 주요 타이틀 부분
+.header {
+
+  //이미지 공통 파일명
+  $_imgName: header;
+
+  position: relative;
+  margin-top: getPercent(70);
+  padding-top: getPercent(320);
+
+
+  &__title {
+    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &__neon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &--top {
+      z-index: 1;
+      @include percentSize(429, 168);
+      @include bgi("#{$_imgName}-neon-top");
+
+      &:before,
+      &:after {
+        position: absolute;
+        top: getPercent(-390);
+        left: getPercent(-60);
+        display: block;
+        content: '';
+        @include percentSize(278, 278);
+      }
+
+      &:before {
+        @include bgi("#{$_imgName}-neon-spark-1");
+      }
+
+      &:after {
+        @include bgi("#{$_imgName}-neon-spark-2");
+      }
+    }
+
+    &--bottom {
+      position: relative;
+      padding-top: 10%;
+      @include percentSize(636, 349);
+      @include bgi("#{$_imgName}-neon-bottom");
+
+      // 반짝거리는 O 부분
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+        @include bgi("#{$_imgName}-neon-bottom-em");
+        content: '';
+      }
+    }
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include percentSize(461, 87);
+    @include bgi("#{$_imgName}-text");
+  }
+}

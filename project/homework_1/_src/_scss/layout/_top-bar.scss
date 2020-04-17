@@ -38,7 +38,7 @@
     position: absolute;
     top: -120%;
     right: 0;
-    @include percentSize(185, 148);
+    @include percentSize(224, 155);
     @include bgi("#{$_imgName}-logo-sm");
   }
 

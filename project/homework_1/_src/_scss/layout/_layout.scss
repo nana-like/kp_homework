@@ -35,62 +35,55 @@ body {
   background-position: fixed;
 }
 
-
-// 주요 타이틀 부분
-.header {
+.visual {
 
   //이미지 공통 파일명
-  $_imgName: header;
+  $_imgName: visual;
 
   position: relative;
-  margin-top: getPercent(70);
-  padding-top: getPercent(320);
+  text-align: center;
 
-
-  &__title {
-    position: relative;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  // 지폐 그림
+  &__money {
+    margin: 0 auto getPercent(-100);
+    @include percentSize(609, 363);
+    @include bgi("#{$_imgName}-money");
   }
 
-  &__neon {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
-    &--top {
-      z-index: 1;
-      @include percentSize(429, 168);
-      @include bgi("#{$_imgName}-neon-top");
-    }
-
-    &--bottom {
-      position: relative;
-      padding-top: 10%;
-      @include percentSize(636, 349);
-      @include bgi("#{$_imgName}-neon-bottom");
-
-      &:before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-        padding-bottom: 100%;
-        @include bgi("#{$_imgName}-neon-bottom-em");
-        content: '';
-      }
-    }
+  // 총 상금
+  &__total {
+    position: relative;
   }
 
   &__text {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    @include percentSize(461, 87);
-    @include bgi("#{$_imgName}-text");
+    // margin: 0 auto;
+    display: inline-block;
+    margin-left: getPercent(-30);
+    @include percentSize(236, 115);
+    @include bgi("#{$_imgName}-total");
+
+    // 손 이미지
+    &:before,
+    &:after {
+      bottom: 0;
+      position: absolute;
+      display: block;
+      content: '';
+      @include percentSize(104, 82);
+    }
+
+    //왼쪽
+    &:before {
+      left: getPercent(135);
+      bottom: getPercent(4);
+      @include bgi("#{$_imgName}-hand-left");
+    }
+
+    //오른쪽
+    &:after {
+      right: getPercent(150);
+      bottom: getPercent(80);
+      @include bgi("#{$_imgName}-hand-right");
+    }
   }
 }
