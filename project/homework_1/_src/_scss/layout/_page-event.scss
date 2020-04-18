@@ -1,18 +1,9 @@
 // ** page-event.scss
 
 
-.transition-back {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #000;
-}
-
 // 1원 송금 이벤트 영역
 .page-event {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;

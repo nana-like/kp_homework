@@ -1,11 +1,10 @@
 // ** page-main.scss
 
+// 메인 페이지
 .page-main {
-  display: none;
 
-  // page 1 전체 백그라운드
+  // 전체 백그라운드
   &__background {
-    // display: none;
     position: fixed;
     top: 0;
     left: 50%;
