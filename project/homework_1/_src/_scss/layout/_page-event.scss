@@ -1,0 +1,83 @@
+// ** page-event.scss
+
+
+.transition-back {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+
+// 1원 송금 이벤트 영역
+.page-event {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  // overflow-y: hidden;
+  background-color: #875224;
+
+}
+
+.event {
+  //이미지 공통 파일명
+  $_imgName: event;
+
+  position: relative;
+  z-index: 1;
+
+  &__btn-close {
+    z-index: 1;
+    position: absolute;
+    top: getPercent(25);
+    right: getPercent(40);
+    @include percentSize(57, 59);
+    @include bgi("#{$_imgName}-btn-close");
+  }
+
+  &__btn-coupon {
+    z-index: 1;
+    position: absolute;
+    top: getPercent(62);
+    right: getPercent(98);
+    @include percentSize(114, 48);
+    @include bgi("#{$_imgName}-btn-coupon");
+  }
+
+  &__btn-update {
+    z-index: 1;
+    position: absolute;
+    top: getPercent(284);
+    right: getPercent(138);
+    @include percentSize(155, 44);
+    @include bgi("#{$_imgName}-btn-update");
+  }
+
+
+  &__top-contents {
+
+    @include percentSize(750, 667);
+    @include bgi("#{$_imgName}-top-contents");
+  }
+
+  &__bottom {
+    position: relative;
+  }
+
+  &__bottom-contents {
+    @include percentSize(750, 767);
+    @include bgi("#{$_imgName}-bottom-contents");
+  }
+}
+
+
+// 송금하기 버튼
+.btn-transfer {
+  @include bgi("btn-transfer");
+  @include percentSize(734, 145);
+  margin-left: getPercent(15);
+}

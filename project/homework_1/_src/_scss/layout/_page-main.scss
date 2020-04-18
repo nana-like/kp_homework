@@ -1,0 +1,38 @@
+// ** page-main.scss
+
+.page-main {
+  display: none;
+
+  // page 1 전체 백그라운드
+  &__background {
+    // display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: $MAX-WIDTH;
+    height: 100%;
+    background-size: 100%;
+    background-color: #25170f;
+    @include bgi("background", "jpg");
+  }
+}
+
+// 참여하기 버튼
+.btn-apply {
+  @include bgi("btn-apply");
+  @include percentSize(734, 148);
+  margin-left: getPercent(10);
+}
+
+
+// 하단 코인 무더기
+.deco-coins-bottom {
+  position: relative;
+  z-index: 1;
+  margin-top: getPercent(25);
+  @include percentSize(750, 184);
+  @include bgi("deco-coins-bottom");
+
+}

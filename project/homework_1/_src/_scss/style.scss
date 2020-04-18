@@ -1,25 +1,22 @@
 /*! style.css */
 
-// Font
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
 // SCSS
 @import "helpers/variables";
 @import "helpers/mixins";
-@import "helpers/mediaqueries";
 @import "helpers/functions";
 
 @import "base/reset";
-@import "base/svg";
 @import "base/animation";
 
+@import "layout/common";
+@import "layout/page-main";
 @import "layout/top-bar";
 @import "layout/header";
-@import "layout/layout";
 @import "layout/visual";
 @import "layout/reward";
 @import "layout/share";
+@import "layout/page-event";
 
 /*! 
 
