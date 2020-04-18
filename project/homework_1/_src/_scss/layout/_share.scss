@@ -1,0 +1,49 @@
+// ** share.scss
+
+// SNS 공유 영역
+.share {
+
+  //이미지 공통 파일명
+  $_imgName: share;
+
+  position: relative;
+  margin-top: getPercent(50);
+
+  &__back {
+    margin: 0 auto;
+    @include percentSize(694, 190);
+    @include bgi("#{$_imgName}-back");
+  }
+
+  &__btns {
+    position: absolute;
+    bottom: getPercent(55);
+    width: 100%;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+  }
+
+  &__btn {
+    @include percentSize(140, 127);
+    @include bgi("#{$_imgName}-sns");
+
+    // SNS별로 이미지 교체
+    $_snsImg: ("facebook": 0,
+        "kakaostory": 33.33%,
+        "kakaotalk": 66.66%,
+        "twitter": 100%);
+
+    @each $name,
+    $pos in $_snsImg {
+      &--#{$name} {
+        background-position: 0 #{$pos};
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: getPercent(10);
+    }
+  }
+
+}

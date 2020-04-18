@@ -1,9 +1,8 @@
 // ** functions.scss
 
-$max: 750;
 
 @function getPercent($px) {
-  $size: $px/$max * 100%;
+  $size: $px/$IMAGE-WIDTH * 100%;
   @return $size;
 }
 

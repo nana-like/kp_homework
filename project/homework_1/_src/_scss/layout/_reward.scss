@@ -1,0 +1,40 @@
+// ** reward.scss
+
+// 상금 및 n주차 안내
+.reward {
+
+  //이미지 공통 파일명
+  $_imgName: reward;
+
+  position: relative;
+  margin-top: getPercent(70);
+
+
+  &__date {
+    position: absolute;
+    top: getPercent(-80);
+    left: 50%;
+    transform: translateX(-50%);
+    @include percentSize(218, 46);
+    @include bgi("#{$_imgName}-weeks");
+
+    // 주차별로 이미지 교체
+    $_pos: 0, 11.11, 22.22, 33.33, 44.44, 55.55, 66.66, 77.77, 88.88, 100;
+
+    @for $i from 1 through length($_pos) {
+      $_value: nth($_pos, $i);
+      $_percentValue: $_value + "%";
+
+      &--week#{$i} {
+        background-position: 0 #{$_percentValue};
+      }
+    }
+  }
+
+  &__main {
+    margin: 0 auto;
+    @include percentSize(555, 218);
+    @include bgi("#{$_imgName}-main");
+  }
+
+}

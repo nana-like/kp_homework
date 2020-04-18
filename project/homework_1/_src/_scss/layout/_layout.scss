@@ -1,89 +1,68 @@
 // ** layout.scss
 
-// 전체 레이아웃
-// @media only screen and (min-width: 920px) {
-//   html {
-//     font-size: 100%;
-//     height: 100%;
-//   }
-// }
 
-body {
-  background-color: #2e2925;
-
-}
 
 .wrap {
   position: relative;
   width: 100%;
-  min-width: 360px;
-  // max-width: 750px;
-  outline: 3px solid red;
+  min-width: $MIN_WIDTH;
+  max-width: $MAX_WIDTH;
+  margin: 0 auto;
+}
+
+// 👇 SEO용 텍스트 숨기기
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 
 
 // 전체 백그라운드
 .background {
-  display: none;
+  // display: none;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  height: 100vh;
+  max-width: $MAX-WIDTH;
+  height: 100%;
   background-size: 100%;
   @include bgi("background", "jpg");
-  background-position: fixed;
+  // background-position: fixed;
 }
 
-.visual {
 
-  //이미지 공통 파일명
-  $_imgName: visual;
+// 하단 고정 영역
+.fixed-btn {
+  z-index: $Z-MAIN-BTN;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: $MAX-WIDTH;
+  overflow-x: hidden;
+}
 
+// 참여하기 버튼
+.btn-apply {
+  @include bgi("btn-apply");
+  @include percentSize(734, 148);
+  margin-left: getPercent(10);
+}
+
+
+// 하단 코인 무더기
+.deco-coins-bottom {
   position: relative;
-  text-align: center;
+  z-index: 1;
+  margin-top: getPercent(25);
+  @include percentSize(750, 184);
+  @include bgi("deco-coins-bottom");
 
-  // 지폐 그림
-  &__money {
-    margin: 0 auto getPercent(-100);
-    @include percentSize(609, 363);
-    @include bgi("#{$_imgName}-money");
-  }
-
-  // 총 상금
-  &__total {
-    position: relative;
-  }
-
-  &__text {
-    // margin: 0 auto;
-    display: inline-block;
-    margin-left: getPercent(-30);
-    @include percentSize(236, 115);
-    @include bgi("#{$_imgName}-total");
-
-    // 손 이미지
-    &:before,
-    &:after {
-      bottom: 0;
-      position: absolute;
-      display: block;
-      content: '';
-      @include percentSize(104, 82);
-    }
-
-    //왼쪽
-    &:before {
-      left: getPercent(135);
-      bottom: getPercent(4);
-      @include bgi("#{$_imgName}-hand-left");
-    }
-
-    //오른쪽
-    &:after {
-      right: getPercent(150);
-      bottom: getPercent(80);
-      @include bgi("#{$_imgName}-hand-right");
-    }
-  }
 }

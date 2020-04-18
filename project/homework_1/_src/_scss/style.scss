@@ -12,14 +12,14 @@
 
 @import "base/reset";
 @import "base/svg";
-@import "base/common";
 @import "base/animation";
-
-@import "modules/buttons";
 
 @import "layout/top-bar";
 @import "layout/header";
 @import "layout/layout";
+@import "layout/visual";
+@import "layout/reward";
+@import "layout/share";
 
 /*! 
 

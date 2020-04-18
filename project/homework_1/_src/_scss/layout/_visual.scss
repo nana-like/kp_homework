@@ -1,0 +1,55 @@
+// ** visual.scss
+
+// 총상금 영역 비주얼 부분
+.visual {
+
+  //이미지 공통 파일명
+  $_imgName: visual;
+
+  position: relative;
+  text-align: center;
+
+  // 지폐 그림
+  &__money {
+    margin: 0 auto getPercent(-100);
+    @include percentSize(609, 363);
+    @include bgi("#{$_imgName}-money");
+  }
+
+  // 총 상금
+  &__total {
+    position: relative;
+  }
+
+  &__text {
+    // margin: 0 auto;
+    display: inline-block;
+    margin-left: getPercent(-30);
+    @include percentSize(236, 115);
+    @include bgi("#{$_imgName}-total");
+
+    // 손 이미지
+    &:before,
+    &:after {
+      bottom: 0;
+      position: absolute;
+      display: block;
+      content: "";
+      @include percentSize(104, 82);
+    }
+
+    //왼쪽
+    &:before {
+      left: getPercent(135);
+      bottom: getPercent(4);
+      @include bgi("#{$_imgName}-hand-left");
+    }
+
+    //오른쪽
+    &:after {
+      right: getPercent(150);
+      bottom: getPercent(80);
+      @include bgi("#{$_imgName}-hand-right");
+    }
+  }
+}
