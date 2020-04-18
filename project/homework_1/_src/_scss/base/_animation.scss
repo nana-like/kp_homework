@@ -35,3 +35,143 @@
     transform: scale(1);
   }
 }
+
+
+@include keyframes(bounce) {
+  0% {
+    transform: scale3d(0.85, 0.85, 1);
+  }
+
+  20% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  100% {
+    transform: scale3d(0.85, 0.85, 1);
+  }
+}
+
+
+
+@include keyframes(hand1) {
+
+  0% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+
+@include keyframes(hand2) {
+
+  0% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@include keyframes(neon1) {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(neon2) {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.85;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(neon3) {
+  0% {
+    opacity: 0.8;
+  }
+
+  20% {
+    opacity: 0.3;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  28% {
+    opacity: 0.3;
+  }
+
+  32% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@include keyframes(neon4) {
+  0% {
+    opacity: 0.35;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0.35;
+  }
+
+  14% {
+    opacity: 1;
+  }
+
+  18% {
+    opacity: 0.35;
+  }
+
+  22% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

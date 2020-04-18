@@ -25,27 +25,30 @@
       @include percentSize(429, 168);
       @include bgi("#{$_imgName}-neon-top");
 
-      &:before,
-      &:after {
-        z-index: -1;
-        position: absolute;
-        top: getPercent(-385);
-        left: getPercent(-60);
-        // display: block;
-        // content: "";
-        @include percentSize(278, 278);
-      }
+      @include animation(neon1, 3.5s, infinite, 1.5s);
 
-      &:before {
-        @include bgi("#{$_imgName}-neon-spark-1");
-        animation: spark 2s infinite;
 
-        transform-origin: 100% 100%;
-      }
+      // &:before,
+      // &:after {
+      //   z-index: -1;
+      //   position: absolute;
+      //   top: getPercent(-385);
+      //   left: getPercent(-60);
+      //   // display: block;
+      //   // content: "";
+      //   @include percentSize(278, 278);
+      // }
 
-      &:after {
-        @include bgi("#{$_imgName}-neon-spark-2");
-      }
+      // &:before {
+      //   @include bgi("#{$_imgName}-neon-spark-1");
+      //   animation: spark 2s infinite;
+
+      //   transform-origin: 100% 100%;
+      // }
+
+      // &:after {
+      //   @include bgi("#{$_imgName}-neon-spark-2");
+      // }
     }
 
     &--bottom {
@@ -53,9 +56,11 @@
       padding-top: 10%;
       @include percentSize(636, 349);
       @include bgi("#{$_imgName}-neon-bottom");
+      @include animation(neon2, 2.5s, infinite);
 
       // 반짝거리는 O 부분
       &:before {
+        opacity: 0.8;
         position: absolute;
         top: 0;
         left: 0;
@@ -64,6 +69,7 @@
         padding-bottom: 100%;
         @include bgi("#{$_imgName}-neon-bottom-em");
         content: "";
+        @include animation(neon3, 3s, infinite, 3s);
       }
     }
   }
@@ -121,7 +127,6 @@
 
     transition: all 4s;
     animation: spark2 0.4s;
-    // animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     animation-fill-mode: forwards;
     transform-origin: 100% 100%;
     transform: scale(0);
@@ -146,6 +151,6 @@
     content: "";
     @include percentSize(160, 160);
     @include bgi("header-neon-spark-2");
-    animation-delay: 0.1s;
+    animation-delay: 0.05s;
   }
 }

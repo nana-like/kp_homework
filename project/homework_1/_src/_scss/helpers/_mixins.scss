@@ -93,7 +93,7 @@
 }
 
 //animation
-@mixin animation($duration, $animation, $delay: 0) {
+@mixin animation($animation, $duration, $repeat:0, $delay: 0) {
   -webkit-animation-delay: $delay;
   -webkit-animation-duration: $duration;
   -webkit-animation-name: $animation;
@@ -116,6 +116,7 @@
   animation-duration: $duration;
   animation-name: $animation;
   animation-fill-mode: forwards;
+  animation-iteration-count: $repeat;
   /* this prevents the animation from restarting! */
 }
 
