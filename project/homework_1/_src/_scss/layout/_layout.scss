@@ -32,8 +32,8 @@
   max-width: $MAX-WIDTH;
   height: 100%;
   background-size: 100%;
+  background-color: #25170f;
   @include bgi("background", "jpg");
-  // background-position: fixed;
 }
 
 
