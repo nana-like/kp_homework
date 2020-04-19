@@ -14,7 +14,7 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  margin-left: -1px;
+  // margin-left: -1px;
 
   &__background {
     opacity: 0;
@@ -29,7 +29,7 @@
     background-size: 100%;
     // background-color: #875224;
     background-color: #25170f;
-    transition: opacity 400ms, visibility 400ms;
+    transition: opacity 600ms, visibility 400ms;
   }
 }
 
@@ -43,6 +43,7 @@
 
   // 트랜지션 때 보여줄 검정 배경
   &__transition-back {
+    display: none;
     opacity: 0;
     visibility: hidden;
     // // z-index: $Z-TRANSITION-BACK;
@@ -51,8 +52,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
-    transition: opacity 400ms, visibility 400ms;
+    // background-color: #000;
+    background-color: #25170f;
+    transition: opacity 400ms, visibility 100ms;
   }
 
   &__btn-close {
@@ -106,33 +108,33 @@
     @include bgi("#{$_imgName}-bottom-contents");
   }
 
-  &__background {
+  // &__background {
 
-    opacity: 0;
-    visibility: hidden;
-    // z-index: $Z-TRANSITION-BACK;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    transition: all 3s;
-    // transition: opacity 400ms, visibility 400ms;
-    // transition: all 3s;
-    // opacity: 0;
-    // visibility: hidden;
-    // position: fixed;
-    // top: 0;
-    // left: 50%;
-    // transform: translateX(-50%);
-    // width: 100%;
-    // max-width: $MAX-WIDTH;
-    // height: 100%;
-    // background-size: 100%;
-    // background-color: #875224;
-    // transition: opacity 400ms, visibility 400ms;
-  }
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   // z-index: $Z-TRANSITION-BACK;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: #000;
+  //   transition: all 3s;
+  //   // transition: opacity 400ms, visibility 400ms;
+  //   // transition: all 3s;
+  //   // opacity: 0;
+  //   // visibility: hidden;
+  //   // position: fixed;
+  //   // top: 0;
+  //   // left: 50%;
+  //   // transform: translateX(-50%);
+  //   // width: 100%;
+  //   // max-width: $MAX-WIDTH;
+  //   // height: 100%;
+  //   // background-size: 100%;
+  //   // background-color: #875224;
+  //   // transition: opacity 400ms, visibility 400ms;
+  // }
 }
 
 
@@ -166,6 +168,8 @@
 
   .page-main {
     opacity: 0;
+    transition: opacity 10ms;
+    transition-delay: 500ms;
   }
 
   .fixed-btn-transfer {
@@ -185,11 +189,17 @@
     visibility: visible;
   }
 
+  // // 이벤트 페이지 전체 배경
+  // .page-event__background {
+  //   opacity: 1;
+  //   visibility: visible;
+  //   transition: visibility 10ms;
+  // }
   // 이벤트 페이지 전체 배경
   .page-event__background {
-    opacity: 1;
     visibility: visible;
-    // transition: visibility 10s;
+    opacity: 1;
+    transition: opacity 400ms, visibility 100ms;
   }
 
   // 위에서 내려오는 애니메이션
@@ -210,11 +220,12 @@
     transition-delay: 200ms;
   }
 
-  // 트랜지션 때 보여줄 검정 배경
-  .event__transition-back {
-    visibility: visible;
-    opacity: 1;
-  }
+  // // 트랜지션 때 보여줄 검정 배경
+  // .event__transition-back {
+  //   visibility: visible;
+  //   opacity: 1;
+  //   transition: opacity 400ms, visibility 100ms;
+  // }
 
 }
 
