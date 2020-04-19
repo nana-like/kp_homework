@@ -5,16 +5,12 @@
 .page-event {
   z-index: $Z-EVENT-PAGE;
   visibility: hidden;
-  // position: absolute;
-  // left: 0;
   top: 0;
   width: 100%;
   max-width: $MAX-WIDTH;
   height: 100%;
   transition: visibility 100ms;
   overflow-y: auto;
-  //////
-
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -31,7 +27,8 @@
     max-width: $MAX-WIDTH;
     height: 100%;
     background-size: 100%;
-    background-color: #875224;
+    // background-color: #875224;
+    background-color: #25170f;
     transition: opacity 400ms, visibility 400ms;
   }
 }
@@ -100,7 +97,7 @@
   &__bottom {
     z-index: $Z-EVENT-CONTENTS;
     position: relative;
-    transform: translateY(100%);
+    transform: translateY(110%);
     transition: transform 250ms;
   }
 
@@ -140,24 +137,24 @@
 
 
 // 송금하기 버튼
-.btn-transfer {
-  // display: none;
-  @include bgi("btn-transfer");
-  @include percentSize(734, 145);
-  margin-left: getPercent(15);
-  // transform: translateY(100%);
-  transition: transform 300ms;
-}
-
-.btn2 {
-  display: none;
-  z-index: $Z-MAIN-BTN;
+.fixed-btn-transfer {
+  visibility: hidden;
+  z-index: $Z-TRANSFER-BTN;
   position: fixed;
   bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: $MAX-WIDTH;
+  // transition: visibility 1ms;
+}
+
+.btn-transfer {
+  @include bgi("btn-transfer");
+  @include percentSize(734, 145);
+  margin-left: getPercent(15);
+  transform: translateY(110%);
+  transition: transform 300ms;
 }
 
 
@@ -167,14 +164,14 @@
 .-event-show {
   overflow-y: hidden;
 
-  // @include select-none;
+  .page-main {
+    opacity: 0;
+  }
 
-  .event {}
+  .fixed-btn-transfer {
+    visibility: visible;
 
-  .btn2 {
-    z-index: 9999;
-    display: block;
-    transform: translateX(-50%) translateY(0%);
+    // transform: translateX(-50%) translateY(0%);
   }
 
   // 애니메이션 일시정지
