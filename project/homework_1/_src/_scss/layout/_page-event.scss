@@ -5,31 +5,34 @@
 .page-event {
   z-index: $Z-EVENT-PAGE;
   visibility: hidden;
-  position: absolute;
+  // position: absolute;
+  // left: 0;
   top: 0;
-  left: 0;
   width: 100%;
+  max-width: $MAX-WIDTH;
   height: 100%;
-  transition: visibility 5s;
-  // transition: visibility 0ms;
-  // transition-delay: 5s;
+  transition: visibility 100ms;
+  overflow-y: auto;
+  //////
 
-  // background-color: #875224;
-  // background-color: #25170f;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: -1px;
+
   &__background {
-
-    // opacity: 0;
-    // visibility: hidden;
-    // position: fixed;
-    // top: 0;
-    // left: 50%;
-    // transform: translateX(-50%);
-    // width: 100%;
-    // max-width: $MAX-WIDTH;
-    // height: 100%;
-    // background-size: 100%;
-    // background-color: #875224;
-    // transition: opacity 400ms, visibility 400ms;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: $MAX-WIDTH;
+    height: 100%;
+    background-size: 100%;
+    background-color: #875224;
+    transition: opacity 400ms, visibility 400ms;
   }
 }
 
@@ -138,25 +141,58 @@
 
 // 송금하기 버튼
 .btn-transfer {
+  // display: none;
   @include bgi("btn-transfer");
   @include percentSize(734, 145);
   margin-left: getPercent(15);
-  transform: translateY(100%);
+  // transform: translateY(100%);
   transition: transform 300ms;
+}
+
+.btn2 {
+  display: none;
+  z-index: $Z-MAIN-BTN;
+  position: fixed;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: $MAX-WIDTH;
 }
 
 
 // 이벤트 화면이 보여지는 경우
+
+
 .-event-show {
+  overflow-y: hidden;
+
+  // @include select-none;
+
+  .event {}
+
+  .btn2 {
+    z-index: 9999;
+    display: block;
+    transform: translateX(-50%) translateY(0%);
+  }
 
   // 애니메이션 일시정지
   .ani {
     animation-play-state: paused;
   }
 
+
   // 페이지 보여지도록 표시
   .page-event {
     visibility: visible;
+  }
+
+  // 이벤트 페이지 전체 배경
+  .page-event__background {
+    opacity: 1;
+    visibility: visible;
+    // transition: visibility 10s;
   }
 
   // 위에서 내려오는 애니메이션
