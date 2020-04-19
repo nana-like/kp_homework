@@ -1,12 +1,12 @@
 (function () {
   const parallaxItems = document.querySelectorAll(".js-parallax");
   const signOnItem = document.querySelector(".js-sign")
-  const fixedBtn = document.querySelector(".btn-apply")
+  const fixedBtnApply = document.querySelector(".btn-apply")
   const parallax = [0.2, 0.3, 0.15]
   let scrollY = 0;
 
   // 패럴렉스 스크롤 이벤트
-  const parllaxEvent = function () {
+  const parllaxEvent = () => {
     scrollY = window.scrollY;
 
     //요소의 스타일 속성 변경
@@ -16,22 +16,15 @@
   };
 
   // 네온사인 켜지는 이벤트
-  const signOnEvent = function () {
+  const signOnEvent = () => {
     scrollY = window.scrollY;
 
     // 값 체크
-    var windowHeight = window.innerHeight;
+    var windowH = window.innerHeight;
     var itemPosition = signOnItem.getBoundingClientRect().top;
-    console.log("windowHeight", windowHeight);
-    console.log("itemPosition", itemPosition);
+    var underneathH = fixedBtnApply.getBoundingClientRect().height; // 참여하기 버튼에 가려지는 높이 계산
 
-    var a = windowHeight;
-    var b = fixedBtn.getBoundingClientRect().height;
-    console.log(b);
-
-
-    if (itemPosition < a - (b * 2.3)) {
-      console.log("!");
+    if (itemPosition < windowH - (underneathH * 2.3)) {
       signOnItem.classList.add("-ani-show");
     }
 

@@ -3,14 +3,32 @@
 
 // 1원 송금 이벤트 영역
 .page-event {
-  display: none;
+  z-index: $Z-EVENT-PAGE;
+  visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  background-color: #875224;
+  height: 100%;
 
+  // background-color: #875224;
+  // background-color: #25170f;
+  &__background {
+
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: $MAX-WIDTH;
+    height: 100%;
+    background-size: 100%;
+    // background-color: #000;
+    background-color: #875224;
+    transition: opacity 400ms, visibility 400ms;
+  }
 }
 
 .event {
@@ -19,6 +37,7 @@
 
   position: relative;
   z-index: 1;
+  overflow-y: hidden;
 
   &__btn-close {
     z-index: 1;
@@ -47,6 +66,13 @@
     @include bgi("#{$_imgName}-btn-update");
   }
 
+  &__top {
+    z-index: $Z-EVENT-CONTENTS;
+    position: relative;
+    // transform: translateY(-100%);
+    // transition: transform 3s;
+  }
+
 
   &__top-contents {
 
@@ -55,12 +81,40 @@
   }
 
   &__bottom {
+    z-index: $Z-EVENT-CONTENTS;
     position: relative;
   }
 
   &__bottom-contents {
     @include percentSize(750, 767);
     @include bgi("#{$_imgName}-bottom-contents");
+  }
+
+  &__background {
+
+    opacity: 0;
+    visibility: hidden;
+    // z-index: $Z-TRANSITION-BACK;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    // transition: all 3s;
+    transition: opacity 500ms, visibility 500ms;
+    // opacity: 0;
+    // visibility: hidden;
+    // position: fixed;
+    // top: 0;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // width: 100%;
+    // max-width: $MAX-WIDTH;
+    // height: 100%;
+    // background-size: 100%;
+    // background-color: #875224;
+    // transition: opacity 400ms, visibility 400ms;
   }
 }
 
@@ -70,4 +124,49 @@
   @include bgi("btn-transfer");
   @include percentSize(734, 145);
   margin-left: getPercent(15);
+}
+
+
+// 이벤트 화면이 보여지는 경우
+.-event-show {
+  .transition-back {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .page-event {
+    visibility: visible;
+    // overflow-y: hidden;
+
+    &__background {
+      opacity: 1;
+      visibility: visible;
+      // transition-delay: 600ms;
+    }
+  }
+
+  .event {
+
+    &__background {
+      opacity: 1;
+      visibility: visible;
+      // transition-delay: 600ms;
+    }
+  }
+
+  .event__top {
+    outline: 3px solid red;
+    // animation: openEventPageTop 1500ms;
+    animation-fill-mode: both;
+    animation: openEventPageTop 550ms;
+    // transform: translateY(0);
+  }
+
+  .event__bottom {
+    outline: 3px solid blue;
+    // animation: openEventPageBottom 1500ms;
+    animation-fill-mode: both;
+    animation: openEventPageBottom 550ms;
+    // transform: translateY(0);
+  }
 }

@@ -52,6 +52,6 @@
 
 .js-sign.-ani-show {
   .share__back {
-    @include animation(neon4, 3s, infinite);
+    @include animation(neon4, 3s, infinite, 0.25s);
   }
 }

@@ -94,7 +94,6 @@
   top: getPercent(5);
   left: 0;
   overflow: hidden;
-  outline: 3px solid red;
 
   &:before {
     position: absolute;
@@ -120,7 +119,6 @@
   top: getPercent(-160);
   left: 0;
   overflow: hidden;
-  outline: 3px solid red;
 
   &:before,
   &:after {

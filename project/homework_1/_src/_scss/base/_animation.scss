@@ -180,12 +180,12 @@
 @include keyframes(coinDrops) {
   0% {
     visibility: visible;
-    transform: translateY(-100%);
+    transform: translateX(-50%) translateY(-100%);
   }
 
   100% {
     visibility: hidden;
-    transform: translateY(100%);
+    transform: translateX(-50%) translateY(100%);
   }
 }
 
@@ -194,6 +194,68 @@
 @include keyframes(coinFixed) {
   0% {
     transform: translateY(-50vh);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@include keyframes(openEventPageTop) {
+
+  0% {
+    transform: translateY(-100%);
+  }
+
+  20% {
+    transform: translateY(-100%);
+  }
+
+  30% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(-8%);
+  }
+
+  80% {
+    transform: translateY(0);
+  }
+
+  90% {
+    transform: translateY(-3%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@include keyframes(openEventPageBottom) {
+
+  0% {
+    transform: translateY(100%);
+  }
+
+  20% {
+    transform: translateY(100%);
+  }
+
+  30% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(8%);
+  }
+
+  80% {
+    transform: translateY(0);
+  }
+
+  90% {
+    transform: translateY(3%);
   }
 
   100% {
