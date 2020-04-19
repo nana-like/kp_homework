@@ -38,7 +38,7 @@
 
 // 최초 진입 시 떨어지는 동전들
 .deco-coins-drop {
-  display: none;
+  // display: none;
   @include pointer-none;
   @include select-none;
   z-index: $Z-COIN-DROP;
@@ -46,7 +46,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  animation: coinDrops 1s;
+  animation: coinDrops 900ms;
   animation-fill-mode: forwards;
 
   &:before,
@@ -100,11 +100,11 @@
   .fixed-coins--1 {
     z-index: 3;
     position: absolute;
-    top: getPercent(140);
+    margin-top: getPercent(270);
     @include percentSize(750, 269);
     @include bgi("deco-coins-fixed-1");
 
-    animation: coinFixed 600ms;
+    animation: coinFixed 550ms;
     // animation: coinFixed 6s;
     animation-fill-mode: both;
     // animation-delay: 1s;
@@ -116,10 +116,10 @@
   .fixed-coins--2 {
     z-index: 1;
     position: absolute;
-    top: getPercent(230);
+    margin-top: getPercent(470);
     @include percentSize(750, 144);
     @include bgi("deco-coins-fixed-2");
-    animation: coinFixed 500ms;
+    animation: coinFixed 450ms;
     // animation: coinFixed 5s;
     animation-fill-mode: both;
     // animation-delay: 100ms;
@@ -128,10 +128,10 @@
   .fixed-coins--3 {
     z-index: 3;
     position: absolute;
-    top: getPercent(300);
+    margin-top: getPercent(600);
     @include percentSize(750, 211);
     @include bgi("deco-coins-fixed-3");
-    animation: coinFixed 700ms;
+    animation: coinFixed 650ms;
     // animation: coinFixed 7s;
     animation-fill-mode: both;
   }
