@@ -14,8 +14,6 @@
     @include percentSize(694, 190);
     @include bgi("#{$_imgName}-back");
     opacity: 0.35;
-    @include animation(neon4, 3s, infinite, 1s);
-    //? TODO: 스크롤 닿을 시 애니메이션 재생?
   }
 
   &__btns {
@@ -49,4 +47,11 @@
     }
   }
 
+}
+
+
+.js-sign.-ani-show {
+  .share__back {
+    @include animation(neon4, 3s, infinite);
+  }
 }
