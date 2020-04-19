@@ -16,22 +16,21 @@
 
   // background-color: #875224;
   // background-color: #25170f;
-  // &__background {
+  &__background {
 
-  //   opacity: 0;
-  //   visibility: hidden;
-  //   position: fixed;
-  //   top: 0;
-  //   left: 50%;
-  //   transform: translateX(-50%);
-  //   width: 100%;
-  //   max-width: $MAX-WIDTH;
-  //   height: 100%;
-  //   background-size: 100%;
-  //   // background-color: #000;
-  //   background-color: #875224;
-  //   transition: opacity 400ms, visibility 400ms;
-  // }
+    // opacity: 0;
+    // visibility: hidden;
+    // position: fixed;
+    // top: 0;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // width: 100%;
+    // max-width: $MAX-WIDTH;
+    // height: 100%;
+    // background-size: 100%;
+    // background-color: #875224;
+    // transition: opacity 400ms, visibility 400ms;
+  }
 }
 
 .event {
@@ -41,6 +40,20 @@
   position: relative;
   z-index: 1;
   overflow-y: hidden;
+
+  // 트랜지션 때 보여줄 검정 배경
+  &__transition-back {
+    opacity: 0;
+    visibility: hidden;
+    // // z-index: $Z-TRANSITION-BACK;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: opacity 400ms, visibility 400ms;
+  }
 
   &__btn-close {
     z-index: 1;
@@ -104,8 +117,9 @@
     width: 100%;
     height: 100%;
     background-color: #000;
+    transition: all 3s;
+    // transition: opacity 400ms, visibility 400ms;
     // transition: all 3s;
-    transition: opacity 500ms, visibility 500ms;
     // opacity: 0;
     // visibility: hidden;
     // position: fixed;
@@ -135,29 +149,38 @@
 // 이벤트 화면이 보여지는 경우
 .-event-show {
 
+  // 애니메이션 일시정지
+  .ani {
+    animation-play-state: paused;
+  }
+
   // 페이지 보여지도록 표시
   .page-event {
     visibility: visible;
-    // transition: visibility 5s;
-    // transition-delay: 1s;
   }
 
-  // 위 애니메이션
+  // 위에서 내려오는 애니메이션
   .event__top {
     animation: openEventPageTop 550ms;
     transform: translateY(0%);
   }
 
-  // 아래 애니메이션
+  // 아래에서 올라가는 애니메이션
   .event__bottom {
     animation: openEventPageBottom 550ms;
     transform: translateY(0%);
   }
 
-  // 송금하기 버튼
+  // 송금하기 버튼 표시
   .btn-transfer {
     transform: translateY(0%);
     transition-delay: 200ms;
+  }
+
+  // 트랜지션 때 보여줄 검정 배경
+  .event__transition-back {
+    visibility: visible;
+    opacity: 1;
   }
 
 }
