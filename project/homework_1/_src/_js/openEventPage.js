@@ -6,10 +6,14 @@
 
   const applyHandler = () => {
     console.log("click!");
-    body.classList.add("-event-show");
+    if (body.classList.contains("-event-show")) {
+      body.classList.remove("-event-show");
+    } else {
+      body.classList.add("-event-show");
+    }
   }
 
-  btnApply.addEventListener("click", applyHandler);
+  document.body.addEventListener("click", applyHandler);
 
 
 })()
