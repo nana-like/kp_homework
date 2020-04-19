@@ -57,7 +57,7 @@
     //오른쪽
     &:after {
       right: getPercent(175);
-      bottom: getPercent(80);
+      bottom: getPercent(160);
       @include bgi("#{$_imgName}-hand-right");
       @include animation(hand2, 0.6s, infinite);
     }

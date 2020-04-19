@@ -37,8 +37,10 @@
         </header>
         <div class="visual">
           <div class="visual__money" aria-label="JAY-G가 그려진 지폐 그림"></div>
-          <p class="visual__text"><span class="blind">총 상금 1억원</span></p>
-          <div class="visual__hands"></div>
+          <div class="visual__total">
+            <p class="visual__text"><span class="blind">총 상금 1억원</span></p>
+            <div class="visual__hands"></div>
+          </div>
         </div>
         <div class="reward">
           <!-- TODO[FE] 한 주가 지날 때마다 .reward__date--week1 클래스네임의 끝자리 숫자를 바꿔주세요. 3주차인 경우 .reward__date--week3가 됩니다. (nykim) -->
@@ -79,6 +81,11 @@
         <button class="btn-apply">
           <span class="blind">참여하기</span>
         </button>
+      </div>
+      <div class="deco-coins-fixed">
+        <div class="fixed-coins fixed-coins--1"></div>
+        <div class="fixed-coins fixed-coins--2"></div>
+        <div class="fixed-coins fixed-coins--3"></div>
       </div>
       <div class="deco-coins-drop"></div>
       <div class="deco-coins-bottom"></div>
