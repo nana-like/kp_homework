@@ -35,3 +35,54 @@
   @include bgi("deco-coins-bottom");
 
 }
+
+// 최초 진입 시 떨어지는 동전들
+.deco-coins-drop {
+  z-index: $Z-COIN-DROP;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: coinDrops 1s;
+  animation-fill-mode: forwards;
+  // transform: translate3d(0, -50%, 0);
+  // transition: all 3s;
+  // transition-delay: 1s;
+
+  &:before,
+  &:after {
+    display: block;
+    content: '';
+  }
+
+  &:before {
+    // outline: 3px solid blue;
+    @include percentSize(750, 1066);
+    @include bgi("coin-drops-bottom");
+  }
+
+  &:after {
+    // outline: 3px solid red;
+    // margin-top: getPercent(100%);
+    @include percentSize(750, 1363);
+    @include bgi("coin-drops-top");
+  }
+
+  [class^=deco-coin] {
+    position: absolute;
+    width: 100%;
+    outline: 3px solid red;
+  }
+
+  .deco-coin-1 {
+    display: none;
+    $_blur: 0.1rem;
+    left: getPercent(300);
+    @include percentSize(103, 121);
+    @include bgi("deco-coin-1");
+    filter: blur($_blur);
+    -webkit-filter: blur($_blur);
+    -moz-filter: blur($_blur);
+    @include transform(scale(5) rotate(5deg));
+  }
+}

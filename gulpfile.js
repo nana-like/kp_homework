@@ -110,7 +110,15 @@ function imageMinify(project) {
 
   return gulp
     .src(srcLoc)
-    .pipe(imagemin())
+    .pipe(imagemin([
+      imagemin.mozjpeg({
+        quality: 75,
+        progressive: true
+      }),
+      imagemin.optipng({
+        optimizationLevel: 7
+      }),
+    ]))
     .pipe(gulp.dest(distLoc));
 }
 

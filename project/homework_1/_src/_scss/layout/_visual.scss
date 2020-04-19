@@ -18,7 +18,9 @@
 
   // 총 상금
   &__total {
+    z-index: $Z-TOTAL-REWARD;
     position: relative;
+
   }
 
   &__text {

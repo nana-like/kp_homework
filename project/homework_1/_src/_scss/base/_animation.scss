@@ -175,3 +175,16 @@
     opacity: 1;
   }
 }
+
+
+@include keyframes(coinDrops) {
+  0% {
+    visibility: visible;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    visibility: hidden;
+    transform: translateY(100%);
+  }
+}
