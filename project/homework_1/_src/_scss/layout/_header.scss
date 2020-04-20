@@ -1,12 +1,15 @@
-// 주요 타이틀 부분
+// * header.scss
+// * 주요 타이틀 부분
+
 .header {
-  //이미지 공통 파일명
+  //이미지 공통 네임
   $_imgName: header;
 
   position: relative;
   margin-top: getPercent(70);
   padding-top: getPercent(320);
 
+  // 타이틀 영역 전체
   &__title {
     position: relative;
     position: absolute;
@@ -21,43 +24,23 @@
     transform: translateX(-50%);
     animation-play-state: inherit;
 
+    // 네온 사인 위
     &--top {
       z-index: 1;
       @include percentSize(429, 168);
       @include bgi("#{$_imgName}-neon-top");
-      @include animation(neon1, 3.5s, infinite, 1.5s);
+      animation: neon-ani-top 3.5s infinite;
+      animation-delay: 1.5s;
       animation-play-state: inherit;
-
-
-      // &:before,
-      // &:after {
-      //   z-index: -1;
-      //   position: absolute;
-      //   top: getPercent(-385);
-      //   left: getPercent(-60);
-      //   // display: block;
-      //   // content: "";
-      //   @include percentSize(278, 278);
-      // }
-
-      // &:before {
-      //   @include bgi("#{$_imgName}-neon-spark-1");
-      //   animation: spark 2s infinite;
-
-      //   transform-origin: 100% 100%;
-      // }
-
-      // &:after {
-      //   @include bgi("#{$_imgName}-neon-spark-2");
-      // }
     }
 
+    // 네온 사인 아래
     &--bottom {
       position: relative;
       padding-top: 10%;
       @include percentSize(636, 349);
       @include bgi("#{$_imgName}-neon-bottom");
-      @include animation(neon2, 2.5s, infinite);
+      animation: neon-ani-bottom 2.5s infinite;
       animation-play-state: inherit;
 
       // 반짝거리는 O 부분
@@ -71,7 +54,8 @@
         padding-bottom: 100%;
         @include bgi("#{$_imgName}-neon-bottom-em");
         content: "";
-        @include animation(neon3, 3s, infinite, 3s);
+        animation: neon-ani-bottom-em 3s infinite;
+        animation-delay: 3s;
         animation-play-state: inherit;
       }
     }
@@ -85,74 +69,44 @@
     @include percentSize(461, 87);
     @include bgi("#{$_imgName}-text");
   }
-}
 
-
-
-.spark {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: getPercent(5);
-  left: 0;
-  overflow: hidden;
-
-  &:before {
+  &__spark {
     position: absolute;
-    // top: getPercent(10);
-    // left: getPercent(125);
-    display: block;
-    content: "";
-    @include percentSize(750, 201);
-    @include bgi("deco-spark-1");
-    // transition: all 10s;
-    animation: spark 10s infinite;
-    transform-origin: 40% 100%;
-  }
-}
+    width: 100%;
+    height: 100%;
+    top: getPercent(-160);
+    left: 0;
+    overflow: hidden;
 
+    &:before,
+    &:after {
+      transition: all 4s;
+      animation: spark-show 0.4s;
+      animation-fill-mode: forwards;
+      animation-delay: 600ms;
+      transform-origin: 100% 100%;
+      transform: scale(0);
+    }
 
+    &:before {
+      position: absolute;
+      top: getPercent(0);
+      left: getPercent(126);
+      display: block;
+      content: "";
+      @include percentSize(160, 160);
+      @include bgi("#{$_imgName}-neon-spark-1");
+    }
 
-.header__spark {
-  // display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: getPercent(-160);
-  left: 0;
-  overflow: hidden;
-
-  &:before,
-  &:after {
-
-    transition: all 4s;
-    animation: spark2 0.4s;
-    animation-fill-mode: forwards;
-    animation-delay: 600ms;
-    transform-origin: 100% 100%;
-    transform: scale(0);
-  }
-
-  &:before {
-    // display: none;
-    position: absolute;
-    top: getPercent(0);
-    left: getPercent(126);
-    display: block;
-    content: "";
-    @include percentSize(160, 160);
-    @include bgi("header-neon-spark-1");
-  }
-
-  &:after {
-    position: absolute;
-    top: getPercent(0);
-    left: getPercent(126);
-    display: block;
-    content: "";
-    @include percentSize(160, 160);
-    @include bgi("header-neon-spark-2");
-    animation-delay: 630ms;
+    &:after {
+      position: absolute;
+      top: getPercent(0);
+      left: getPercent(126);
+      display: block;
+      content: "";
+      @include percentSize(160, 160);
+      @include bgi("#{$_imgName}-neon-spark-2");
+      animation-delay: 630ms;
+    }
   }
 }

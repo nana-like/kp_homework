@@ -26,16 +26,6 @@
 }
 
 
-@include keyframes(spark2) {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 
 @include keyframes(bounce) {
   0% {
@@ -84,67 +74,7 @@
   }
 }
 
-@include keyframes(neon1) {
-  0% {
-    opacity: 1;
-  }
 
-  40% {
-    opacity: 0.7;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@include keyframes(neon2) {
-  0% {
-    opacity: 1;
-  }
-
-  40% {
-    opacity: 0.85;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@include keyframes(neon3) {
-  0% {
-    opacity: 0.8;
-  }
-
-  20% {
-    opacity: 0.3;
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  28% {
-    opacity: 0.3;
-  }
-
-  32% {
-    opacity: 0.8;
-  }
-
-  100% {
-    opacity: 0.8;
-  }
-}
 
 @include keyframes(neon4) {
   0% {
@@ -177,29 +107,7 @@
 }
 
 
-@include keyframes(coinDrops) {
-  0% {
-    visibility: visible;
-    transform: translateX(-50%) translateY(-100%);
-  }
 
-  100% {
-    visibility: hidden;
-    transform: translateX(-50%) translateY(100%);
-  }
-}
-
-
-
-@include keyframes(coinFixed) {
-  0% {
-    transform: translateY(-50vh);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
 
 @include keyframes(openEventPageTop) {
 
@@ -260,5 +168,110 @@
 
   100% {
     transform: translateY(0);
+  }
+}
+
+
+// **************
+// !!!!!!!!
+
+
+
+
+@include keyframes(coin-fixed-show) {
+  0% {
+    transform: translateY(-50vh);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+@include keyframes(coin-drop-show) {
+  0% {
+    visibility: visible;
+    transform: translateX(-50%) translateY(-100%);
+  }
+
+  100% {
+    visibility: hidden;
+    transform: translateX(-50%) translateY(100%);
+  }
+}
+
+@include keyframes(spark-show) {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@include keyframes(neon-ani-top) {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@include keyframes(neon-ani-bottom) {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.85;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@include keyframes(neon-ani-bottom-em) {
+  0% {
+    opacity: 0.8;
+  }
+
+  20% {
+    opacity: 0.3;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  28% {
+    opacity: 0.3;
+  }
+
+  32% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.8;
   }
 }

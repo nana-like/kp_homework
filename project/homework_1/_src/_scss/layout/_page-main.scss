@@ -14,32 +14,33 @@
     max-width: $MAX-WIDTH;
     height: 100%;
     background-size: 100%;
-    background-color: #25170f;
-    @include bgi("background", "jpg");
+    background-color: $CL-BG;
+    @include bgi("page-main-background", "jpg");
   }
 }
 
-// 참여하기 버튼
-.btn-apply {
-  @include bgi("btn-apply");
-  @include percentSize(734, 148);
-  margin-left: getPercent(14);
-}
 
+// 하단 메인 버튼
+.main-btn-apply {
+  z-index: $Z-MAIN-BTN;
+  overflow: hidden;
+  position: fixed;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: $MAX-WIDTH;
 
-// 하단 코인 무더기
-.deco-coins-bottom {
-  position: relative;
-  z-index: 1;
-  margin-top: getPercent(25);
-  @include percentSize(750, 184);
-  @include bgi("deco-coins-bottom");
+  .btn-apply {
+    @include bgi("btn-apply");
+    @include percentSize(734, 148);
+    margin-left: getPercent(14);
+  }
 
 }
 
 // 최초 진입 시 떨어지는 동전들
 .deco-coins-drop {
-  // display: none;
   @include pointer-none;
   @include select-none;
   z-index: $Z-COIN-DROP;
@@ -47,10 +48,12 @@
   position: fixed;
   top: 0;
   left: 50%;
-  // transform: translateX(-50%);
   width: 100%;
-  animation: coinDrops 900ms;
+  animation: coin-drop-show 900ms;
   animation-fill-mode: forwards;
+
+  // 이미지 네임
+  $_imgName: "deco-coins-drop";
 
   &:before,
   &:after {
@@ -59,28 +62,13 @@
   }
 
   &:before {
-    // outline: 3px solid blue;
     @include percentSize(750, 1066);
-    @include bgi("coin-drops-bottom");
+    @include bgi("#{$_imgName}-bottom");
   }
 
   &:after {
-    // outline: 3px solid red;
-    // margin-top: getPercent(100%);
     @include percentSize(750, 1363);
-    @include bgi("coin-drops-top");
-  }
-
-  .deco-coin-1 {
-    display: none;
-    $_blur: 0.1rem;
-    left: getPercent(300);
-    @include percentSize(103, 121);
-    @include bgi("deco-coin-1");
-    filter: blur($_blur);
-    -webkit-filter: blur($_blur);
-    -moz-filter: blur($_blur);
-    @include transform(scale(5) rotate(5deg));
+    @include bgi("#{$_imgName}-top");
   }
 }
 
@@ -94,42 +82,45 @@
   @include pointer-none;
   @include select-none;
 
+  // 이미지 네임
+  $_imgName: "deco-coins-fixed";
+
+  .fixed-coins {
+    position: absolute;
+    animation-name: coin-fixed-show;
+    animation-fill-mode: both;
+  }
+
   .fixed-coins--1 {
     z-index: 3;
-    position: absolute;
     margin-top: getPercent(270);
     @include percentSize(750, 269);
-    @include bgi("deco-coins-fixed-1");
-
-    animation: coinFixed 550ms;
-    // animation: coinFixed 6s;
-    animation-fill-mode: both;
-    // animation-delay: 1s;
-    // transform: translate3d(0, -50%, 0);
-    // transition: all 4s;
-    // transition-delay: 1s;
+    @include bgi("#{$_imgName}-1");
+    animation-duration: 550ms;
   }
 
   .fixed-coins--2 {
     z-index: 1;
-    position: absolute;
     margin-top: getPercent(470);
     @include percentSize(750, 144);
     @include bgi("deco-coins-fixed-2");
-    animation: coinFixed 450ms;
-    // animation: coinFixed 5s;
-    animation-fill-mode: both;
-    // animation-delay: 100ms;
+    animation-duration: 450ms;
   }
 
   .fixed-coins--3 {
     z-index: 3;
-    position: absolute;
     margin-top: getPercent(600);
     @include percentSize(750, 211);
     @include bgi("deco-coins-fixed-3");
-    animation: coinFixed 650ms;
-    // animation: coinFixed 7s;
-    animation-fill-mode: both;
+    animation-duration: 650ms;
   }
+}
+
+// 하단 코인 무더기
+.deco-coins-bottom {
+  position: relative;
+  z-index: 1;
+  margin-top: getPercent(25);
+  @include percentSize(750, 184);
+  @include bgi("deco-coins-bottom");
 }

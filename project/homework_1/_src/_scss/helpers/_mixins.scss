@@ -1,21 +1,18 @@
-// ---
-// mixin
-// ---
-// **** Last Modified : 2018-09-05
+// ** mixins.scss
+// ** 믹스인
 
-// 👇 폰트 (Spoqa Han Sans)
-@mixin font-main {
-  font-family: "Spoqa Han Sans", AppleGothic, sans-serif, Helvetica;
+@function getPercent($px) {
+  $size: $px/$IMAGE-WIDTH * 100%;
+  @return $size;
 }
 
-// 👇 폰트 (monospace)
-@mixin font-mono {
-  font-family: monospace;
+@mixin percentHeight($height) {
+  padding-bottom: getPercent($height);
 }
 
-// 👇 폰트 (montserrat)
-@mixin font-mont {
-  font-family: "Montserrat", AppleGothic, sans-serif, Helvetica;
+@mixin percentSize($width, $height) {
+  width: getPercent($width);
+  padding-bottom: getPercent($height);
 }
 
 // 글자 줄임 표시

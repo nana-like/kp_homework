@@ -3,7 +3,7 @@
 // 최상단 바
 .top-bar {
 
-  //이미지 공통 파일명
+  //이미지 공통 네임
   $_imgName: top-bar;
 
   position: relative;
@@ -28,12 +28,14 @@
     @include bgi("#{$_imgName}-logo");
   }
 
+  // 중간 텍스트
   &__text {
     @include percentSize(176, 22);
     margin: 0 auto;
     @include bgi("#{$_imgName}-text");
   }
 
+  // 우측 쇼미더머니 로고
   &__logo-sm {
     position: absolute;
     top: -120%;
