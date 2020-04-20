@@ -9,7 +9,6 @@
   max-width: $MAX-WIDTH;
   height: 100%;
   transition: visibility 100ms;
-  transition: all 10s !important;
   overflow-y: auto;
   position: fixed;
   left: 50%;
@@ -29,7 +28,6 @@
     background-size: 100%;
     background-color: $CL-BG;
     transition: opacity 600ms, visibility 400ms;
-    transition: all 10s !important;
   }
 }
 
@@ -63,7 +61,6 @@
     height: 100%;
     background-color: $CL-BG;
     transition: opacity 400ms, visibility 100ms;
-    transition: all 10s !important;
   }
 
   // 닫기 버튼
@@ -156,7 +153,6 @@
     opacity: 0;
     transition: opacity 10ms;
     transition-delay: 500ms;
-    transition: all 10s !important;
   }
 
   // 메인 영역의 애니메이션 일시정지
@@ -174,21 +170,26 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 400ms, visibility 100ms;
-    transition: all 10s !important;
   }
 
   // 위에서 내려오는 애니메이션
   .event__top {
     @include animation(event-page-show-top, 550ms);
+    -webkit-animation-fill-mode: initial;
+    -moz-animation-fill-mode: initial;
+    -o-animation-fill-mode: initial;
+    animation-fill-mode: initial;
     transform: translateY(0%);
-    transition: all 10s !important;
   }
 
   // 아래에서 올라가는 애니메이션
   .event__bottom {
     @include animation(event-page-show-bottom, 550ms);
-    transform: translateY(0%);
-    transition: all 10s !important;
+    -webkit-animation-fill-mode: initial;
+    -moz-animation-fill-mode: initial;
+    -o-animation-fill-mode: initial;
+    animation-fill-mode: initial;
+    transform: translateY(0%)
   }
 
 
