@@ -26,6 +26,7 @@
   "scripts": {
     "start:h1": "gulp browserSync:h1",
     "start:h2": "gulp browserSync:h2",
+    "gulp:h1": "gulp dev:h1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "nykim",
