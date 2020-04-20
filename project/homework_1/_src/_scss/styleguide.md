@@ -19,7 +19,7 @@
 
 - 스타일시트의 주석은 `//`로 사용합니다.
 - 주석은 대상이 되는 요소의 앞 라인에 작성합니다.
-- VS CODE에서 [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)을 확장 프로그램으로 설치하면 보기가 더 편합니다.
+- VS CODE에서 [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)를 확장 프로그램으로 설치하면 보기가 더 편합니다.
 
 ```css
   // 헤더 안의 로고

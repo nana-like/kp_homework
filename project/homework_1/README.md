@@ -19,7 +19,7 @@ $ npm run gulp:h1
 ## 전달사항
 
 - 프론트엔드에서 처리가 필요한 부분은 `TODO[FE]`로 주석을 달아놓았습니다.
-- VS CODE에서 [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)을 확장 프로그램으로 설치하면 보기가 더 편합니다.
+- VS CODE에서 [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)를 확장 프로그램으로 설치하면 보기가 더 편합니다.
 
 ```HTML
   <!-- TODO[FE] 전달사항입니다. -->
