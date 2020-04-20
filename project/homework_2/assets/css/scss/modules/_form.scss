@@ -1,10 +1,10 @@
 // ** _form.scss
 
-// 폼 아이템
-.kp-form-item {
+// 인풋 아이템
+.kp-input-item {
   font-size: 14px;
 
-  & > label {
+  &>label {
     display: block;
     margin: 0 0 0.4rem 0;
     color: $CL-black;
@@ -13,14 +13,14 @@
     text-transform: none;
   }
 
-  & > input {
+  &>input {
     z-index: 1;
     position: relative;
     width: 100%;
     padding: 0.6em 0.75em;
     font-size: 1em;
     background-color: #fff;
-    border: 1px solid rgba(34, 34, 34, 0.2);
+    border: 1px solid $CL-input-border;
     color: $CL-black;
     border-radius: 0.35rem;
     box-shadow: 0 0 0 0 transparent inset;
@@ -28,11 +28,11 @@
     margin-bottom: 20px;
 
     &:focus {
-      border-color: #80b5d8;
+      border-color: $CL-focus;
     }
   }
 
-  & > .explain {
+  &>.explain {
     position: relative;
     max-height: 0;
     font-size: 90%;
@@ -45,8 +45,10 @@
 
 // State별 스타일링
 .kp-form-item {
+
   // 👋 에러가 난 경우
   &.state-error {
+
     input,
     input:focus {
       margin-bottom: 0;
@@ -72,7 +74,7 @@
 
   // 👋 필수입력인 경우
   &.state-required {
-    & > label:after {
+    &>label:after {
       display: inline-block;
       margin-left: 3px;
       color: $CL-error;
@@ -96,14 +98,5 @@
       color: rgba(0, 0, 0, 0.75);
       border: 1px solid rgba(34, 36, 38, 0.4);
     }
-  }
-}
-
-body {
-  padding: 30px;
-
-  h2 {
-    font-size: 30px;
-    margin-bottom: 10px;
   }
 }

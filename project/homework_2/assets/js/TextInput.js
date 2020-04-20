@@ -13,7 +13,7 @@ function TextInput(param) {
   } = info;
 
   this.elem = document.createElement("div");
-  this.elem.classList.add(`kp-form-item`);
+  this.elem.classList.add(`kp-input-item`);
 
   if (label) {
     this.elem.innerHTML += `<label for="test${inputID}">${label}</label>`;
@@ -59,7 +59,7 @@ var readonly = {
 var required = {
   label: "필수 입력 폼",
   state: "required",
-  placeholder: "필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"
+  value: "필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"
 }
 
 var requiredError = {
@@ -72,7 +72,6 @@ var requiredError = {
 
 const showCode = (target) => {
   const html = target.elem.outerHTML;
-  // var a = html.toString();
   var a = html.replace(/</gi, "&lt;");
   console.dir(a);
   const codeElem =
@@ -89,7 +88,8 @@ const showCode = (target) => {
 new TextInput(normal);
 new TextInput(disabled);
 new TextInput(readonly);
-new TextInput(required);
+var r = new TextInput(required);
+showCode(r);
 var a = new TextInput(requiredError);
 showCode(a);
 var z = new TextInput(noLabel);
