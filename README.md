@@ -6,7 +6,7 @@ Gulp.js 로 작업하였으며, 아래 명령어로 실행할 수 있습니다.
 
 ```shell
 # 설치
-$ npm install
+$ npm install -D
 
 # homework_1 웹서버
 $ npm run start:h1

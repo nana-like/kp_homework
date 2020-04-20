@@ -11,7 +11,8 @@ var sass = require("gulp-sass");
 (uglify = require("gulp-uglify")),
 (rename = require("gulp-rename")),
 (htmlmin = require('gulp-htmlmin')),
-(concat = require("gulp-concat"));
+(concat = require("gulp-concat")),
+(babel = require("gulp-babel"));
 browserSync = require("browser-sync").create();
 
 // 경로 변수
@@ -21,10 +22,6 @@ var root = {
   h1: "./project/homework_1",
   h2: "./project/homework_2"
 }
-var src = root + "/src";
-var dist = root + "/dist";
-
-var paths;
 
 // 타임스탬프용 날짜 생성
 Object.defineProperty(Date.prototype, "YYYYMMDDHHMMSS", {
@@ -55,8 +52,8 @@ var sassOptions = {
   indentType: "tab"
 };
 
+// SASS 컴파일
 function sassCompile(project) {
-
   var srcLoc = root[project] + "/_src/_scss/**/*.scss";
   var distLoc = root[project] + "/css/";
   var myDate = new Date().YYYYMMDDHHMMSS();
@@ -86,6 +83,7 @@ function sassCompile(project) {
   );
 }
 
+// HTML 인클루드
 function htmlInclude(project) {
   var srcLoc = root[project] + "/_src/_html/index.html";
   var distLoc = root[project] + "/";
@@ -101,8 +99,7 @@ function htmlInclude(project) {
 }
 
 
-// 이미지 압축 정의
-
+// 이미지 압축
 function imageMinify(project) {
   var srcLoc = root[project] + "/_src/_images/*";
   var distLoc = root[project] + "/images/";
@@ -122,13 +119,38 @@ function imageMinify(project) {
 }
 
 
-// Browser-sync 정의
+// html 압축
+function htmlMinify(project) {
+  var loc = root[project];
+  return gulp
+    .src(loc + "/index.html")
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
+    .pipe(gulp.dest(loc));
+}
+
+
+// js 파일 합치고 트랜스컴파일 후 난독화
+function combineJS(project) {
+  var srcLoc = root[project] + "/_src/_js/**.js";
+  var distLoc = root[project] + "/js/";
+  return gulp
+    .src(srcLoc)
+    .pipe(concat("ui.js")) //하나로 합치기
+    .pipe(babel()) //트랜스컴파일
+    .pipe(uglify()) //난독화
+    .pipe(rename("ui.min.js"))
+    .pipe(gulp.dest(distLoc));
+};
+
+
+// Gulp Task : 리로드 
 gulp.task("reload", function () {
   browserSync.reload();
 });
 
-
-
+// Gulp Task : h1 폴더에 대한 웹서버
 gulp.task("browserSync:h1", function () {
   return browserSync.init({
     port: PORT,
@@ -138,6 +160,7 @@ gulp.task("browserSync:h1", function () {
   });
 });
 
+// Gulp Task : h2 폴더에 대한 웹서버
 gulp.task("browserSync:h2", function () {
   return browserSync.init({
     port: PORT,
@@ -147,27 +170,6 @@ gulp.task("browserSync:h2", function () {
   });
 });
 
-
-// html 압축
-gulp.task('minify:html', function () {
-  return gulp
-    .src(dist + "/index.html")
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
-    .pipe(gulp.dest(dist));
-});
-
-// js 파일 난독화
-gulp.task("combine:js", function () {
-  return gulp
-    .src([src + "/js/common.js", src + "/js/scrollAnimation.js"])
-    .pipe(concat("ui.js")) //하나로 합치기
-    .pipe(gulp.dest(dist + "/js"))
-    .pipe(uglify())
-    .pipe(rename("ui.min.js"))
-    .pipe(gulp.dest(dist + "/js"));
-});
 
 
 
@@ -195,6 +197,23 @@ gulp.task(
   }
 )
 
+gulp.task(
+  // ? 우선은 미사용
+  "htmlMinify:h1",
+  function () {
+    htmlMinify("h1");
+    console.log("👋 h1 폴더의 HTML을 압축 했습니다.");
+  }
+)
+
+gulp.task(
+  "combineJS:h1",
+  function () {
+    combineJS("h1");
+    console.log("👋 h1 폴더의 JS를 합친 뒤 트랜스컴파일 및 압축 했습니다.");
+  }
+)
+
 
 gulp.task("watch:h1", function () {
   gulp.watch(
@@ -209,29 +228,23 @@ gulp.task("watch:h1", function () {
     },
     ["htmlInclude:h1", "reload"]
   );
-  // gulp.watch(
-  //   dist + "/index.html", {
-  //     interval: 500
-  //   },
-  //   ["minify:html"]
-  // );
   gulp.watch(
     root.h1 + "/_src/_images/*", {
       interval: 800
     },
     ["imageMinify:h1"]
   );
-  // gulp.watch(
-  //   paths.js, {
-  //     interval: 800
-  //   },
-  //   ["combine:js"]
-  // );
+  gulp.watch(
+    root.h1 + "/_src/_js/*", {
+      interval: 800
+    },
+    ["combineJS:h1"]
+  );
 });
 
 gulp.task(
   "dev:h1",
-  ["htmlInclude:h1", "sass:h1", "imageMinify:h1", "browserSync:h1", "watch:h1"],
+  ["htmlInclude:h1", "sass:h1", "combineJS:h1", "browserSync:h1", "watch:h1"],
   function () {
     console.log("👋 걸프가 h1을 위해 일하고 있어요 ;)");
   }
