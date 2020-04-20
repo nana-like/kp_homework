@@ -20,8 +20,8 @@ function TextInput(param) {
   }
 
   this.elem.innerHTML += `
-    <input id="test${inputID}" type="text" placeholder="${placeholder}" value="${value}" />
-    <div class="explain"></div>
+      <input id="test${inputID}" type="text" placeholder="${placeholder}" value="${value}" />
+      <div class="explain"></div>
     `;
 
   if (state) {
