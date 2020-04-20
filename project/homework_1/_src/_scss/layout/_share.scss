@@ -9,6 +9,7 @@
   position: relative;
   margin-top: getPercent(50);
 
+  // 배경 이미지
   &__back {
     margin: 0 auto;
     @include percentSize(694, 190);
@@ -17,6 +18,7 @@
 
   }
 
+  // 공유 버튼 묶음
   &__btns {
     position: absolute;
     bottom: getPercent(55);
@@ -26,6 +28,7 @@
     @include align-items(center);
   }
 
+  // 각 버튼
   &__btn {
     @include percentSize(140, 127);
     @include bgi("#{$_imgName}-sns");
@@ -50,9 +53,9 @@
 
 }
 
-
+// 👋 애니메이션 활성화 [scrollAnimation.js]
 .js-sign.-ani-show {
   .share__back {
-    @include animation(neon4, 3s, infinite, 0.25s);
+    @include animation(neon-ani-share, 3s, infinite, 0.25s);
   }
 }

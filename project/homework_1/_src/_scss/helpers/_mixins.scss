@@ -90,7 +90,7 @@
 }
 
 //animation
-@mixin animation($animation, $duration, $repeat:0, $delay: 0) {
+@mixin animation($animation, $duration, $repeat:1, $delay: 0) {
   -webkit-animation-delay: $delay;
   -webkit-animation-duration: $duration;
   -webkit-animation-name: $animation;

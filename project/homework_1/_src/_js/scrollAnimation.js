@@ -4,7 +4,6 @@
   const fixedBtnApply = document.querySelector(".btn-apply")
   const parallax = [0.2, 0.3, 0.15]
   let scrollY = 0;
-  // var temp = document.querySelector(".page-event");
 
   // 패럴렉스 스크롤 이벤트
   const parllaxEvent = () => {
@@ -31,13 +30,6 @@
 
   };
 
-  // const tempEvt = () => {
-  //   scrollY = window.scrollY;
-
-  //   temp.style.top = scrollY + "px";
-  //   console.log(scrollY);
-
-  // }
 
   // 스크롤 애니메이션 핸들러
   const scrollHandler = function () {
@@ -45,6 +37,7 @@
     signOnEvent();
   };
 
+  window.addEventListener("load", signOnEvent);
   window.addEventListener("scroll", scrollHandler);
 
 

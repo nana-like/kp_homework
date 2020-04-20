@@ -3,7 +3,7 @@
 // 총상금 영역 비주얼 부분
 .visual {
 
-  //이미지 공통 파일명
+  //이미지 공통 네임
   $_imgName: visual;
 
   position: relative;
@@ -24,12 +24,11 @@
   }
 
   &__text {
-    // margin: 0 auto;
     display: inline-block;
     margin-left: getPercent(-30);
     @include percentSize(236, 115);
     @include bgi("#{$_imgName}-total");
-    animation: bounce 0.6s infinite;
+    @include animation(bounce, 0.6s, infinite);
     animation-play-state: inherit;
   }
 
@@ -52,7 +51,7 @@
       left: getPercent(145);
       bottom: getPercent(4);
       @include bgi("#{$_imgName}-hand-left");
-      @include animation(hand1, 0.6s, infinite);
+      @include animation(hand-swing-left, 0.6s, infinite);
     }
 
     //오른쪽
@@ -60,7 +59,7 @@
       right: getPercent(175);
       bottom: getPercent(160);
       @include bgi("#{$_imgName}-hand-right");
-      @include animation(hand2, 0.6s, infinite);
+      @include animation(hand-swing-right, 0.6s, infinite);
     }
   }
 }

@@ -1,32 +1,109 @@
 // ** animation.scss
 
-// 스파크 애니메이션
-@include keyframes(spark) {
-  0% {
-    // opacity: 0;
 
-    top: 0%;
-    left: 0%;
-    // max-width: 0;
-    transform: scale(0.5, 0);
-    // transform: translate3d(0%, 0%, 0) scale3d(0, 0, 0);
-    // transform: translate3d(0%, 30%, 0);
+// 고정 영역의 코인이 떨어지는 애니메이션
+@include keyframes(coin-fixed-show) {
+  0% {
+    transform: translateY(-50vh);
   }
 
   100% {
-    // opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    top: 0;
-    left: 0;
-    // max-width: 100%;
-    transform: scale(1, 1);
-    // transform: translate3d(0%, 0%, 0) scale3d(1, 1, 1);
-    // transform: translate3d(0%, 0%, 0);
+// 드롭 코인이 우수수 떨어지는 애니메이션
+@include keyframes(coin-drop-show) {
+  0% {
+    visibility: visible;
+    transform: translateX(-50%) translateY(-100%);
+  }
+
+  100% {
+    visibility: hidden;
+    transform: translateX(-50%) translateY(100%);
+  }
+}
+
+// 헤더 영역의 스파크가 일어나는 애니메이션
+@include keyframes(spark-show) {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+// 헤더 영역의 DROP THE 네온사인이 반짝이는 애니메이션
+@include keyframes(neon-ani-top) {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// 헤더 영역의 MONEY 네온사인이 반짝이는 애니메이션
+@include keyframes(neon-ani-bottom) {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.85;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
 
+// 헤더 영역의 MONEY 중 O가 반짝이는 애니메이션
+@include keyframes(neon-ani-bottom-em) {
+  0% {
+    opacity: 0.8;
+  }
 
+  20% {
+    opacity: 0.3;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  28% {
+    opacity: 0.3;
+  }
+
+  32% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+
+// 비주얼 영역 텍스트가 바운스하는 애니메이션
 @include keyframes(bounce) {
   0% {
     transform: scale3d(0.85, 0.85, 1);
@@ -43,7 +120,8 @@
 
 
 
-@include keyframes(hand1) {
+// 비주얼 영역 왼쪽의 손 움직이는 애니메이션
+@include keyframes(hand-swing-left) {
 
   0% {
     transform: rotate(0);
@@ -59,7 +137,8 @@
 }
 
 
-@include keyframes(hand2) {
+// 비주얼 영역 오른쪽의 손 움직이는 애니메이션
+@include keyframes(hand-swing-right) {
 
   0% {
     transform: rotate(0);
@@ -75,8 +154,8 @@
 }
 
 
-
-@include keyframes(neon4) {
+// SNS 공유 영역의 네온 사인 켜지는 애니메이션
+@include keyframes(neon-ani-share) {
   0% {
     opacity: 0.35;
   }
@@ -108,8 +187,8 @@
 
 
 
-
-@include keyframes(openEventPageTop) {
+// 이벤트 페이지 열릴 시 위에서 내려오는 애니메이션
+@include keyframes(event-page-show-top) {
 
   0% {
     transform: translateY(-100%);
@@ -140,7 +219,9 @@
   }
 }
 
-@include keyframes(openEventPageBottom) {
+
+// 이벤트 페이지 열릴 시 아래에서 올라오는 애니메이션
+@include keyframes(event-page-show-bottom) {
 
   0% {
     transform: translateY(100%);
@@ -168,110 +249,5 @@
 
   100% {
     transform: translateY(0);
-  }
-}
-
-
-// **************
-// !!!!!!!!
-
-
-
-
-@include keyframes(coin-fixed-show) {
-  0% {
-    transform: translateY(-50vh);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-
-@include keyframes(coin-drop-show) {
-  0% {
-    visibility: visible;
-    transform: translateX(-50%) translateY(-100%);
-  }
-
-  100% {
-    visibility: hidden;
-    transform: translateX(-50%) translateY(100%);
-  }
-}
-
-@include keyframes(spark-show) {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-
-@include keyframes(neon-ani-top) {
-  0% {
-    opacity: 1;
-  }
-
-  40% {
-    opacity: 0.7;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-
-@include keyframes(neon-ani-bottom) {
-  0% {
-    opacity: 1;
-  }
-
-  40% {
-    opacity: 0.85;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-
-@include keyframes(neon-ani-bottom-em) {
-  0% {
-    opacity: 0.8;
-  }
-
-  20% {
-    opacity: 0.3;
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  28% {
-    opacity: 0.3;
-  }
-
-  32% {
-    opacity: 0.8;
-  }
-
-  100% {
-    opacity: 0.8;
   }
 }

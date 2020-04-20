@@ -1,6 +1,6 @@
 // * header.scss
-// * 주요 타이틀 부분
 
+// 주요 타이틀 부분
 .header {
   //이미지 공통 네임
   $_imgName: header;
@@ -29,8 +29,7 @@
       z-index: 1;
       @include percentSize(429, 168);
       @include bgi("#{$_imgName}-neon-top");
-      animation: neon-ani-top 3.5s infinite;
-      animation-delay: 1.5s;
+      @include animation(neon-ani-top, 3.5s, infinite, 1.5s);
       animation-play-state: inherit;
     }
 
@@ -40,7 +39,7 @@
       padding-top: 10%;
       @include percentSize(636, 349);
       @include bgi("#{$_imgName}-neon-bottom");
-      animation: neon-ani-bottom 2.5s infinite;
+      @include animation(neon-ani-bottom, 2.5s, infinite);
       animation-play-state: inherit;
 
       // 반짝거리는 O 부분
@@ -54,8 +53,7 @@
         padding-bottom: 100%;
         @include bgi("#{$_imgName}-neon-bottom-em");
         content: "";
-        animation: neon-ani-bottom-em 3s infinite;
-        animation-delay: 3s;
+        @include animation(neon-ani-bottom-em, 3s, infinite, 3s);
         animation-play-state: inherit;
       }
     }
@@ -80,8 +78,7 @@
 
     &:before,
     &:after {
-      transition: all 4s;
-      animation: spark-show 0.4s;
+      @include animation(spark-show, 0.4s);
       animation-fill-mode: forwards;
       animation-delay: 600ms;
       transform-origin: 100% 100%;

@@ -9,7 +9,7 @@
   position: relative;
   margin-top: getPercent(70);
 
-
+  // n주차 안내
   &__date {
     position: absolute;
     top: getPercent(-80);
@@ -31,6 +31,7 @@
     }
   }
 
+  // 메인 안내
   &__main {
     margin: 0 auto;
     @include percentSize(555, 218);
