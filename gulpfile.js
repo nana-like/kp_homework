@@ -54,8 +54,15 @@ var sassOptions = {
 
 // SASS 컴파일
 function sassCompile(project) {
-  var srcLoc = root[project] + "/_src/_scss/**/*.scss";
-  var distLoc = root[project] + "/css/";
+
+  if (project === "h1") {
+    var srcLoc = root[project] + "/_src/_scss/**/*.scss";
+    var distLoc = root[project] + "/css/";
+  } else {
+    var srcLoc = root[project] + "/assets/css/scss/**/*.scss";
+    var distLoc = root[project] + "/assets/css/";
+  }
+
   var myDate = new Date().YYYYMMDDHHMMSS();
 
   return (
@@ -160,17 +167,6 @@ gulp.task("browserSync:h1", function () {
   });
 });
 
-// Gulp Task : h2 폴더에 대한 웹서버
-gulp.task("browserSync:h2", function () {
-  return browserSync.init({
-    port: PORT,
-    server: {
-      baseDir: root.h2
-    }
-  });
-});
-
-
 
 
 gulp.task(
@@ -242,10 +238,70 @@ gulp.task("watch:h1", function () {
   );
 });
 
+
+// ------
+
+
+gulp.task(
+  "sass:h2",
+  function () {
+    sassCompile("h2");
+    console.log("👋 h2 폴더의 scss를 컴파일 했습니다.");
+  }
+);
+
+// Gulp Task : h2 폴더에 대한 웹서버
+gulp.task("browserSync:h2", function () {
+  return browserSync.init({
+    port: PORT,
+    server: {
+      baseDir: root.h2
+    }
+  });
+});
+
+
+
+
+gulp.task("watch:h2", function () {
+  gulp.watch(
+    root.h2 + "/assets/css/scss/**/*.scss", {
+      interval: 500
+    },
+    ["sass:h2"]
+  );
+  // gulp.watch(
+  //   root.h1 + "/_src/_html/**/*.html", {
+  //     interval: 100
+  //   },
+  //   ["htmlInclude:h1", "reload"]
+  // );
+  // gulp.watch(
+  //   root.h1 + "/_src/_images/*", {
+  //     interval: 800
+  //   },
+  //   ["imageMinify:h1"]
+  // );
+  // gulp.watch(
+  //   root.h1 + "/_src/_js/*", {
+  //     interval: 800
+  //   },
+  //   ["combineJS:h1"]
+  // );
+});
+
 gulp.task(
   "dev:h1",
   ["htmlInclude:h1", "sass:h1", "combineJS:h1", "browserSync:h1", "watch:h1"],
   function () {
     console.log("👋 걸프가 h1을 위해 일하고 있어요 ;)");
+  }
+);
+
+gulp.task(
+  "dev:h2",
+  ["sass:h2", "browserSync:h2", "watch:h2"],
+  function () {
+    console.log("👋 걸프가 h2를 위해 일하고 있어요 ;)");
   }
 );

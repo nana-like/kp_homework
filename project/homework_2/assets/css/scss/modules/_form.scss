@@ -1,0 +1,111 @@
+.form-item {
+
+  font-size: 15px;
+
+
+  label {
+    display: block;
+    margin: 0 0 .4rem 0;
+    color: $CL-black;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: none;
+  }
+
+  input {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    padding: .6em .75em;
+    font-size: 1em;
+    background-color: #fff;
+    border: 1px solid rgba(34, 36, 38, .2);
+    color: $CL-black;
+    border-radius: .35rem;
+    box-shadow: 0 0 0 0 transparent inset;
+    transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+    margin-bottom: 24px;
+
+    &:focus {
+      border-color: #80b5d8;
+    }
+  }
+
+  input+input {}
+
+  .explain {
+    position: relative;
+    max-height: 0;
+    // margin: 4px 0 10px;
+    font-size: 90%;
+    color: $CL-error;
+    opacity: 0;
+    visibility: hidden;
+    // transition: visibility .1s, transform .3s ease, opacity .3s ease;
+  }
+}
+
+
+// 👇 폼에서 에러가 난 경우
+.form-item.form-item-error {
+
+  input,
+  input:focus {
+    margin-bottom: 0;
+    border-color: $CL-error;
+    background-color: #fff8f8;
+  }
+
+  .explain {
+    opacity: 1;
+    min-height: 24px;
+    max-height: 100%;
+    visibility: visible;
+    padding: 4px .75em 10px;
+  }
+}
+
+.form-item-required {
+  label:after {
+    display: inline-block;
+    margin-left: 3px;
+    color: $CL-error;
+    font-size: 1em;
+    line-height: 1;
+    content: '*';
+  }
+}
+
+// 👇 폼 사용 불가
+.form-item-disabled {
+  opacity: 0.5;
+  @include pointer-none;
+  @include select-none;
+}
+
+// 👇 폼 읽기 전용
+.form-item-readonly {
+  input {
+    color: rgba(0, 0, 0, .55);
+  }
+
+  input:hover {
+
+    border: 1px solid rgba(34, 36, 38, .2);
+  }
+
+  input:focus {
+    color: rgba(0, 0, 0, .75);
+    border: 1px solid rgba(34, 36, 38, .4);
+  }
+}
+
+
+body {
+  padding: 30px;
+
+  h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
