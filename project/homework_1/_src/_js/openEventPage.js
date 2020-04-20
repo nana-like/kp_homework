@@ -1,25 +1,21 @@
-(function () {
-  console.log("OPEN EVENT PAGE");
-  const body = document.body;
-  const btnApply = document.querySelector(".btn-apply");
-  const btnTransfer = document.querySelector(".btn-transfer");
-  const btnClose = document.querySelector(".event__btn-close");
+const body = document.body;
+const btnApply = document.querySelector(".js-btn-apply");
+const btnClose = document.querySelector(".js-btn-close");
 
-
-  const openPageEvent = () => {
+const pageEvent = {
+  // 페이지 보여줌
+  open: () => {
     body.classList.add("-event-show");
-  }
-
-  const closePageEvent = () => {
+  },
+  // 페이지 숨김
+  close: () => {
     body.classList.remove("-event-show");
   }
+}
 
-  // btnTransfer.addEventListener("click", applyEvent);
-  // document.body.addEventListener("click", closeEvent);
+const loadHandler = () => {
+  btnApply.addEventListener("click", pageEvent.open);
+  btnClose.addEventListener("click", pageEvent.close);
+}
 
-
-  btnApply.addEventListener("click", openPageEvent);
-  btnClose.addEventListener("click", closePageEvent);
-
-
-})()
+window.addEventListener("load", loadHandler);
