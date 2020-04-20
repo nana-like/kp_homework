@@ -1,13 +1,14 @@
 /*! style.css */
 
-
-// SCSS
+// helpers
 @import "helpers/variables";
 @import "helpers/mixins";
 
+// base
 @import "base/reset";
 @import "base/animation";
 
+// layout
 @import "layout/common";
 @import "layout/page-main";
 @import "layout/top-bar";

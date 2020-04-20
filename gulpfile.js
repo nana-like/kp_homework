@@ -51,8 +51,7 @@ Object.defineProperty(Date.prototype, "YYYYMMDDHHMMSS", {
 // SASS 정의
 sass.compiler = require("node-sass");
 var sassOptions = {
-  outputStyle: "expanded",
-  // outputStyle: "compressed",
+  outputStyle: "compressed",
   indentType: "tab"
 };
 
@@ -65,7 +64,7 @@ function sassCompile(project) {
   return (
     gulp
     .src(srcLoc)
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on("error", sass.logError))
     .pipe(
       autoprefixer({
@@ -81,7 +80,7 @@ function sassCompile(project) {
       -----------------------------------------------
     `)
     )
-    .pipe(sourcemaps.write())
+    // .pipe(sourcemaps.write())
     .pipe(gulp.dest(distLoc))
     .pipe(browserSync.stream())
   );
