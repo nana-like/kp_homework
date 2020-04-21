@@ -44,9 +44,9 @@
   }
 
   // 👇 마진값 추가
-  &:not(:first-child) {
-    margin-left: 10px;
-  }
+  // &:not(:last-child) {
+  //   margin-right: 10px;
+  // }
 }
 
 // State별 스타일링
@@ -72,11 +72,11 @@
   }
 
   // 👇 사용 불가 상태인 경우
-  &.state-disabled {
-    opacity: 0.5;
-    @include pointer-none;
-    @include select-none;
-  }
+  // &.state-disabled{
+  //   opacity: 0.5;
+  //   @include pointer-none;
+  //   @include select-none;
+  // }
 
   // 👋 필수입력인 경우
   &.state-required {
@@ -91,48 +91,37 @@
   }
 
   // 👋 읽기전용인 경우
-  &.state-readonly {
-    input {
-      color: rgba(0, 0, 0, 0.55);
-    }
+  // &.state-readonly {
+  //   input {
+  //     color: rgba(0, 0, 0, 0.55);
+  //   }
 
-    input:hover {
-      border: 1px solid rgba(34, 36, 38, 0.2);
-    }
+  //   input:hover {
+  //     border: 1px solid rgba(34, 36, 38, 0.2);
+  //   }
 
-    input:focus {
-      color: rgba(0, 0, 0, 0.75);
-      border: 1px solid rgba(34, 36, 38, 0.4);
-    }
-  }
+  //   input:focus {
+  //     color: rgba(0, 0, 0, 0.75);
+  //     border: 1px solid rgba(34, 36, 38, 0.4);
+  //   }
+  // }
 }
 
-
-// ***** 임의
-
-
-.test {
-
-  .selectbox {
-    min-width: 40px;
-    padding: 0 4px;
-    height: 38px;
-    border: 1px solid #aaa;
-  }
-
-  button {
-    width: 38px;
-    height: 38px;
-    background-color: crimson;
-  }
-
+.kp-input-item input:disabled {
+  opacity: 0.5;
+  @include pointer-none;
+  @include select-none;
 }
 
-.flexbox {
-  @include flexbox();
-}
+.kp-input-item input[readonly] {
+  color: rgba(0, 0, 0, 0.55);
 
-.selectbox-full,
-.kp-input-item {
-  flex-grow: 1 !important;
+  &:hover {
+    border: 1px solid rgba(34, 36, 38, 0.2);
+  }
+
+  &:focus {
+    color: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(34, 36, 38, 0.4);
+  }
 }

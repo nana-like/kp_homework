@@ -20,27 +20,40 @@
   </div>
 
   <div class="test">
-    <div class="group-title">Tit</div>
-    <div class="group flexbox">
+    <div class="kp-group">
+      <div class="kp-group-title">Tit</div>
+
+      <div class="kp-flexbox">
 
 
-      <div class="kp-selectbox">
-        <select class="kp-select-wrap" name="" id="" title="셀렉트 박스">
-          <option value="1"> 1</option>
-          <option value="2">옵션 2</option>
-          <option value="3">옵션 3</option>
-        </select>
-        <div class="kp-selected" data-text=""></div>
+        <div class="kp-selectbox">
+          <select class="kp-select-wrap" name="" id="" title="셀렉트 박스">
+            <option value="1"> 1</option>
+            <option value="2">옵션 2</option>
+            <option value="3">옵션 3</option>
+          </select>
+          <div class="kp-selected" data-text=""></div>
+        </div>
+        <div class="kp-input-item state-error">
+          <input id="test6" type="text" placeholder="라벨 없이 인풋 필드만 사용할 수도 있습니다" value="">
+          <div class="explain">에러 삐용</div>
+        </div>
+        <button class="kp-btn btn-primary">나는 버튼이당</button>
+
+
       </div>
-      <div class="kp-input-item state-error">
-        <input id="test6" type="text" placeholder="라벨 없이 인풋 필드만 사용할 수도 있습니다" value="">
-        <div class="explain">에러 삐용</div>
-      </div>
-      <button>나는 버튼이당</button>
     </div>
   </div>
   <br />
-  <div class="test flexbox">
+  <div class="kp-flexbox">
+    <button class="kp-btn btn-primary">버튼1</button>
+    <button class="kp-btn btn-primary" disabled>버튼2</button>
+    <button class="kp-btn">버튼3</button>
+    <button class="kp-btn" disabled>버튼3</button>
+    <button class="kp-btn size-lg">size-lg</button>
+  </div>
+  <button class="kp-btn btn-primary size-lg full fixed">size-full</button>
+  <!-- <div class="test flexbox">
 
 
     <div class="kp-selectbox width-full">
@@ -66,15 +79,16 @@
       <input id="test6" type="text" placeholder="라벨 없이 인풋 필드만 사용할 수도 있습니다" value="">
       <div class="explain">에러 삐용</div>
     </div>
-  </div>
+  </div> -->
 
   <hr>
   <hr>
   <hr>
+  <div class="blank">a</div>
   <hr>
   <script src="assets/js/Selectbox.js"></script>
-  <script src="assets/js/RadioGroup.js"></script>
-  <!--  <script src="assets/js/TextInput.js"></script> -->
+  <!-- <script src="assets/js/RadioGroup.js"></script> -->
+  <!-- <script src="assets/js/TextInput.js"></script> -->
 </body>
 
 </html>

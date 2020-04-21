@@ -9,6 +9,7 @@ function TextInput(param) {
     placeholder = "내용을 입력해주세요",
     value = "",
     state,
+    type,
     hasError
   } = info;
 
@@ -26,7 +27,9 @@ function TextInput(param) {
 
   if (state) {
     this.elem.classList.add(`state-${state}`);
-    this.elem.children[1].setAttribute(`${state}`, true);
+  }
+  if (type) {
+    this.elem.children[1].setAttribute(`${type}`, true);
   }
   if (hasError) {
     this.elem.classList.add(`state-error`);
@@ -46,13 +49,13 @@ var noLabel = {
 
 var disabled = {
   label: "사용 불가 폼",
-  state: "disabled",
+  type: "disabled",
   placeholder: "disabled 속성이 붙으면 폼을 사용할 수 없습니다"
 }
 
 var readonly = {
   label: "읽기 전용 폼",
-  state: "readonly",
+  type: "readonly",
   value: "readonly 속성이 붙은 읽기 전용 폼입니다"
 }
 

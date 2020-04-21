@@ -33,11 +33,28 @@ body {
   overflow: hidden;
 }
 
-.group-title {
+.kp-group {}
+
+.kp-group-title {
   display: block;
   margin: 0 0 0.4rem 0;
   color: rgba(0, 0, 0, 0.87);
   font-size: 14px;
   font-weight: 700;
   text-transform: none;
+}
+
+.kp-flexbox {
+  @include flexbox();
+
+  .kp-selectbox,
+  .kp-input-item,
+  .kp-radio-group,
+  .kp-btn {
+    // flex: 1;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
 }

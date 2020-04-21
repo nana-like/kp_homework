@@ -217,7 +217,7 @@ input[type="email"] {
 input:disabled,
 input[readonly] {
   //iOS에서 disabled처리한 input에 기본적으로 적용되는 스타일 제거
-  opacity: 1;
+  // opacity: 1;
   -webkit-text-fill-color: inherit;
 }
 
