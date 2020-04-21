@@ -5,6 +5,7 @@ const exampleArea = document.querySelector(".example-form");
 const exampleInputID = () => {
   const elem = document.createElement("div");
   elem.classList.add("kp-line");
+  elem.classList.add("kp-m-bottom");
 
   const input = new TextInput({
     label: "아이디",
@@ -18,6 +19,7 @@ const exampleInputID = () => {
 const exampleInputPW = () => {
   const elem = document.createElement("div");
   elem.classList.add("kp-line");
+  elem.classList.add("kp-m-bottom");
 
   const input = new TextInput({
     label: "비밀번호",
@@ -35,6 +37,7 @@ const exampleInputPW = () => {
 const exampleRadioGender = () => {
   const elem = document.createElement("div");
   elem.classList.add("kp-line");
+  elem.classList.add("kp-m-bottom");
 
   const radio = new RadioGroup({
     groupTitle: "성별",
@@ -50,6 +53,7 @@ const exampleRadioGender = () => {
 const exampleSelectBirthday = () => {
   const elem = document.createElement("div");
   elem.classList.add("kp-group");
+  elem.classList.add("kp-m-bottom");
   elem.innerHTML += `<div class="kp-group-title">생년월일</div>`;
 
   const line = document.createElement("div");
@@ -95,6 +99,7 @@ const exampleSelectBirthday = () => {
 const exampleSelectPhone = () => {
   const elem = document.createElement("div");
   elem.classList.add("kp-group");
+  elem.classList.add("kp-m-bottom");
   elem.innerHTML += `<div class="kp-group-title">전화번호</div>`;
 
   const line = document.createElement("div");
@@ -129,6 +134,7 @@ const exampleAgree = () => {
   elem.classList.add("kp-line");
   elem.classList.add("align-center");
   elem.classList.add("space-end");
+  elem.classList.add("kp-m-bottom-lg");
 
   const p = document.createElement("p");
   p.innerHTML = "모든 약관 내용에 동의합니다";
@@ -146,7 +152,7 @@ const exampleAgree = () => {
 }
 
 const exampleButton = () => {
-  const elem = document.createElement("bu");
+  const elem = document.createElement("div");
   elem.classList.add("kp-line");
 
   const btnJoin = new Button({

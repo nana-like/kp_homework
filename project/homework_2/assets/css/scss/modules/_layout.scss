@@ -39,3 +39,36 @@
     }
   }
 }
+
+
+.kp-title {
+  font-size: 38px;
+  margin: 14px 0 24px;
+}
+
+.kp-m {
+  &-top {
+    margin-top: 20px;
+  }
+
+  &-top-md {
+    margin-top: 40px;
+  }
+
+  &-top-lg {
+    margin-top: 60px;
+  }
+
+  &-bottom {
+    margin-bottom: 20px;
+  }
+
+  &-bottom-md {
+    margin-bottom: 40px;
+  }
+
+  &-bottom-lg {
+    margin-bottom: 60px;
+  }
+
+}

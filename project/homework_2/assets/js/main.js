@@ -16,36 +16,36 @@ const switchGuide = document.querySelector("#switch-demos");
 
 // 텍스트 인풋 - 데모 생성 옵션
 const textInputDemo = [{
-    id: "demo1",
+    id: "inputdemo1",
     title: "Default",
     elem: new TextInput(textInputOptions.normal)
   },
   {
-    id: "demo2",
+    id: "inputdemo2",
     title: "Required",
-    desc: "<code>state-required</code> 클래스를 추가합니다.",
+    desc: "<code>state-required</code> 클래스를 추가합니다. 필요한 경우 <code>required</code> 속성을 추가합니다.",
     elem: new TextInput(textInputOptions.required)
   },
   {
-    id: "demo4",
+    id: "inputdemo3",
     title: "Error & Required",
-    desc: "<code>state-error</code> 클래스와 <code>state-required</code> 클래스를 추가합니다.",
+    desc: "<code>state-error</code> 클래스와 <code>state-required</code> 클래스를 추가합니다. 필요한 경우 <code>required</code> 속성을 추가합니다.",
     elem: new TextInput(textInputOptions.requiredError)
   },
   {
-    id: "demo3",
+    id: "inputdemo4",
     title: "Disabled",
     desc: "input에 <code>disabled</code> 속성을 추가합니다.",
     elem: new TextInput(textInputOptions.disabled)
   },
   {
-    id: "demo5",
+    id: "inputdemo5",
     title: "Readonly",
     desc: "input에 <code>readonly</code> 속성을 추가합니다.",
     elem: new TextInput(textInputOptions.readonly)
   },
   {
-    id: "demo6",
+    id: "inputdemo6",
     title: "No Label",
     desc: "인풋 필드만 단독으로 사용할 수도 있습니다.",
     elem: new TextInput(textInputOptions.noLabel)

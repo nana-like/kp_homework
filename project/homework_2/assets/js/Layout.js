@@ -5,7 +5,7 @@ let layoutID = 0;
 const layoutGuide = document.querySelector("#layout-demos");
 
 // 레이아웃 생성
-layout1 = () => {
+const layout1 = () => {
   const elem = document.createElement("div");
   elem.classList.add("kp-line");
 
@@ -19,7 +19,7 @@ layout1 = () => {
   return elem;
 }
 
-layout2 = () => {
+const layout2 = () => {
   const elem = document.createElement("div");
   elem.classList.add("kp-line");
 
@@ -35,7 +35,7 @@ layout2 = () => {
   return elem;
 }
 
-layout3 = () => {
+const layout3 = () => {
   const elem = document.createElement("div");
   elem.classList.add("kp-line");
   elem.classList.add("align-center");
@@ -51,7 +51,7 @@ layout3 = () => {
   return elem;
 }
 
-layout4 = () => {
+const layout4 = () => {
   const elem = document.createElement("div");
   elem.classList.add("kp-line");
   elem.classList.add("align-center");
@@ -68,7 +68,8 @@ layout4 = () => {
 
   return elem;
 }
-layout5 = () => {
+
+const layout5 = () => {
   const elem = document.createElement("div");
   elem.classList.add("kp-group");
   elem.innerHTML = `<div class="kp-group-title">타이틀</div>`;
@@ -89,6 +90,41 @@ layout5 = () => {
   line.appendChild(input);
   line.appendChild(btn1);
   line.appendChild(btn2);
+
+  return elem;
+}
+
+const layout6 = () => {
+  const elem = document.createElement("div");
+  elem.classList.add("kp-group");
+  elem.innerHTML = `<div class="kp-group-title">.kp-m-top & .kp-m-bottom-md</div>`;
+
+  const line1 = document.createElement("div");
+  const line2 = document.createElement("div");
+  const line3 = document.createElement("div");
+  const input = new TextInput({});
+  const btn1 = new Button({
+    text: "I have margin values!",
+    btnType: "primary"
+  });
+  const btn2 = new Button({
+    text: "Button"
+  });
+  line1.classList.add("kp-line");
+  line2.classList.add("kp-line");
+  line2.classList.add("kp-m-top");
+  line2.classList.add("kp-m-bottom-md");
+  line3.classList.add("kp-line");
+  input.classList.add("full-size");
+  btn1.classList.add("full-size");
+  btn2.classList.add("full-size");
+
+  line1.appendChild(input);
+  line2.appendChild(btn1);
+  line3.appendChild(btn2);
+  elem.appendChild(line1);
+  elem.appendChild(line2);
+  elem.appendChild(line3);
 
   return elem;
 }
@@ -126,6 +162,12 @@ const layoutDemo = [{
     title: "그룹 타이틀",
     desc: "상위 요소에게 <code>.kp-group</code> 클래스를 추가하고, 그 하위에 <code>.kp-group-title</code> 클래스의 요소를 추가합니다.",
     elem: layout5()
+  },
+  {
+    id: "lyDemo6",
+    title: "Margin",
+    desc: "요소의 위나 아래에 마진값을 주려면 <code>.kp-m-{top 또는 bottom}</code> 클래스를 사용합니다. 해당 클래스 뒤에 <code>-{md/lg}</code> 를 붙이면 그 값이 더 커집니다.",
+    elem: layout6()
   }
 ]
 
@@ -133,8 +175,3 @@ const layoutDemo = [{
 for (let i = 0; i < layoutDemo.length; i++) {
   layoutGuide.appendChild(new DemoContainer(layoutDemo[i]));
 }
-
-
-// layoutGuide.appendChild(layout1());
-// layoutGuide.appendChild(new DemoContainer(layout1()));
-// layoutGuide.appendChild(new DemoContainer(layoutDemo[1]));

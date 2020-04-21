@@ -71,11 +71,13 @@ const textInputOptions = {
   required: {
     label: "필수 입력 폼",
     state: "required",
+    attribute: "required",
     value: "필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"
   },
   requiredError: {
     label: "필수 입력 + 에러",
     state: "required",
+    attribute: "required",
     placeholder: "에러는 어떤 폼에든 쓸 수 있습니다",
     hasError: "에러가 있으면 이렇게 색상이 바뀌어요!"
   },

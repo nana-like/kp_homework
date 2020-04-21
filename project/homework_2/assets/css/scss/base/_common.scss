@@ -10,11 +10,11 @@
   --yellow: #fff8ad;
 }
 
-html {
-  @include res {
-    font-size: 59%;
-  }
-}
+// html {
+//   @include res {
+//     font-size: 59%;
+//   }
+// }
 
 body {
   font-size: 1.5rem;
@@ -283,4 +283,11 @@ body {
   }
 
 
+}
+
+
+.example {
+  max-width: var(--maxW);
+  padding: 0 30px;
+  margin: 0 auto;
 }
