@@ -41,6 +41,15 @@
       width: 100px;
       @include ellipsis;
     }
+
+    &[disabled] {
+      opacity: 0.5;
+      @include pointer-none;
+
+      &+.kp-selected {
+        opacity: 0.5;
+      }
+    }
   }
 
   // 👇 full size인 경우
@@ -58,6 +67,7 @@
       background-color: #f5f5f5;
     }
   }
+
 }
 
 
@@ -74,8 +84,7 @@
 
   &:after {
     display: block;
-    padding: .6em 3em .6em .8em;
-    color: red;
+    padding: .6em 2em .6em .8em;
     content: attr(data-text);
     @include ellipsis;
   }
