@@ -1,9 +1,6 @@
 // 고유 인풋 ID 설정용
 let inputID = 0;
 
-// 텍스트 인풋 데모 영역
-const textInputGuide = document.querySelector("#textinput-demos");
-
 // 텍스트 인풋 아이템 생성
 class TextInput {
   constructor(param) {
@@ -15,6 +12,7 @@ class TextInput {
       placeholder = "내용을 입력해주세요",
       value = "",
       state,
+      type = "text",
       attribute,
       hasError
     } = param;
@@ -28,7 +26,7 @@ class TextInput {
       this.elem.innerHTML += `<label for="test${inputID}">${label}</label>`;
     }
 
-    this.elem.innerHTML += `<input id="test${inputID}" type="text" placeholder="${placeholder}" value="${value}" /><div class="explain"></div>
+    this.elem.innerHTML += `<input id="test${inputID}" type="${type}" placeholder="${placeholder}" value="${value}" /><div class="explain"></div>
     `;
 
     // 상태가 설정된 경우
@@ -85,47 +83,4 @@ const textInputOptions = {
     value: "레이블 없이 사용하는 것도 가능합니다",
     hasError: "이때 에러 메시지도 함께 쓸 수 있습니다."
   }
-}
-
-// 데모 생성 옵션
-const textInputDemo = [{
-    id: "demo1",
-    title: "Default",
-    elem: new TextInput(textInputOptions.normal)
-  },
-  {
-    id: "demo2",
-    title: "Required",
-    desc: "<code>state-required</code> 클래스를 추가합니다.",
-    elem: new TextInput(textInputOptions.required)
-  },
-  {
-    id: "demo4",
-    title: "Error & Required",
-    desc: "<code>state-error</code> 클래스와 <code>state-required</code> 클래스를 추가합니다.",
-    elem: new TextInput(textInputOptions.requiredError)
-  },
-  {
-    id: "demo3",
-    title: "Disabled",
-    desc: "input에 <code>disabled</code> 속성을 추가합니다.",
-    elem: new TextInput(textInputOptions.disabled)
-  },
-  {
-    id: "demo5",
-    title: "Readonly",
-    desc: "input에 <code>readonly</code> 속성을 추가합니다.",
-    elem: new TextInput(textInputOptions.readonly)
-  },
-  {
-    id: "demo6",
-    title: "No Label",
-    desc: "인풋 필드만 단독으로 사용할 수도 있습니다.",
-    elem: new TextInput(textInputOptions.noLabel)
-  }
-]
-
-// 텍스트 인풋 - 데모 컨테이너 생성
-for (let i = 0; i < textInputDemo.length; i++) {
-  textInputGuide.appendChild(new DemoContainer(textInputDemo[i]));
 }

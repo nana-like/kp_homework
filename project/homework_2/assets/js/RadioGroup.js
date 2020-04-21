@@ -1,9 +1,6 @@
 // 고유 라디오그룹 ID 설정용
 let radioGroupID = 0;
 
-// 라디오그룹 데모 영역
-const radioGroupGuide = document.querySelector("#radiogroup-demos");
-
 // 라디오그룹 아이템 생성
 class RadioGroup {
   constructor(param) {
@@ -24,7 +21,7 @@ class RadioGroup {
     // 타이틀이 있을 경우
     if (groupTitle) {
       this.elem.innerHTML += `
-    <div class="radio-group-title">그룹 타이틀</div>
+    <div class="radio-group-title">${groupTitle}</div>
     `;
     }
 
@@ -63,30 +60,4 @@ const radioGroupOptions = {
     checkedIndex: 1,
     disabledIndex: 2
   }
-}
-
-
-// 데모 생성 옵션
-const radioGroupDemo = [{
-    id: "radioG1",
-    title: "Default",
-    elem: new RadioGroup(radioGroupOptions.default)
-  },
-  {
-    id: "radioG2",
-    title: "Title",
-    desc: "<code>&lt;div class='radio-group-title'>&lt;/div></code>를 추가합니다.",
-    elem: new RadioGroup(radioGroupOptions.withTitle)
-  },
-  {
-    id: "radioG3",
-    title: "Disabled",
-    desc: "input에 <code>disabled</code> 속성을 추가합니다.",
-    elem: new RadioGroup(radioGroupOptions.withDisabled)
-  }
-]
-
-// 라디오그룹 - 데모 컨테이너 생성
-for (let i = 0; i < radioGroupDemo.length; i++) {
-  radioGroupGuide.appendChild(new DemoContainer(radioGroupDemo[i]));
 }
