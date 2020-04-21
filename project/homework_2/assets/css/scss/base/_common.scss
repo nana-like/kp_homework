@@ -110,8 +110,12 @@ body {
   text-transform: none;
 }
 
-.kp-flexbox {
+.kp-line {
   @include flexbox();
+
+  .full-size {
+    flex: 1;
+  }
 
   &.align-center {
     @include align-items(center);

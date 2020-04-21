@@ -80,16 +80,20 @@ for (let i = 0; i < selectboxDemo.length; i++) {
   selectboxGuide.appendChild(new DemoContainer(selectboxDemo[i]));
 }
 
-// 모든 셀렉트 박스 선택
-const boxes = document.querySelectorAll(".kp-selectbox");
+const getBoxLabels = () => {
+  // 모든 셀렉트 박스 선택
+  const boxes = document.querySelectorAll(".kp-selectbox");
 
-// 라벨 삽입
-boxes.forEach((item) => {
-  item.addEventListener("change", function () {
-    showLabel(item);
-  });
-})
+  // 라벨 삽입
+  boxes.forEach((item) => {
+    item.addEventListener("change", function () {
+      showLabel(item);
+    });
+  })
 
-for (let i = 0; i < boxes.length; i++) {
-  showLabel(boxes[i]);
+  for (let i = 0; i < boxes.length; i++) {
+    showLabel(boxes[i]);
+  }
 }
+
+getBoxLabels();

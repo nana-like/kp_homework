@@ -6,11 +6,12 @@ let scrollY = 0;
 
 // 패럴렉스 스크롤 이벤트
 const parllaxEvent = () => {
-  scrollY = window.scrollY;
+  scrollY = window.pageYOffset;
 
   //요소 별로 차이값 적용
   parallaxItems.forEach((item, idx) => {
-    item.style.top = `-${scrollY * parallax[idx]}px`;
+    const pos = scrollY * parallax[idx];
+    item.style.top = `-${pos}px`;
   })
 };
 
