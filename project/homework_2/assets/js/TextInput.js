@@ -5,10 +5,17 @@ let inputID = 0;
 const textInputGuide = document.querySelector("#textinput-demos");
 
 // 마크업 코드 생성
-const generateCode = (target) => {
+const generateCode = (target, stopTidy) => {
+
   const html = target.outerHTML;
-  const result = tidy_html5(html, tidyOptions);
-  const code = result.replace(/</gi, "&lt;");
+  let code = "";
+
+  if (!stopTidy) {
+    result = tidy_html5(html, tidyOptions);
+    code = result.replace(/</gi, "&lt;");
+  } else {
+    code = html.replace(/</gi, "&lt;");
+  }
   return code;
 }
 
@@ -19,9 +26,15 @@ class DemoContainer {
       id,
       title,
       elem,
-      desc
+      desc,
+      stopTidy,
     } = param;
-    const code = generateCode(elem);
+    let code = null;
+    if (stopTidy) {
+      code = generateCode(elem, "noTidy");
+    } else {
+      code = generateCode(elem);
+    }
     const demoCodeTemplate = `
     <div class="demo__code">
     <div class="code-toggle">
@@ -91,7 +104,7 @@ class TextInput {
     // 에러인 경우
     if (hasError) {
       this.elem.classList.add(`state-error`);
-      this.elem.children[2].innerHTML = hasError;
+      this.elem.querySelector(".explain").innerHTML = hasError;
     }
 
     return this.elem;
@@ -127,6 +140,10 @@ const textInputOptions = {
     state: "required",
     placeholder: "에러는 어떤 폼에든 쓸 수 있습니다",
     hasError: "에러가 있으면 이렇게 색상이 바뀌어요!"
+  },
+  noLabel: {
+    value: "레이블 없이 사용하는 것도 가능합니다",
+    hasError: "이때 에러 메시지도 함께 쓸 수 있습니다."
   }
 }
 
@@ -159,6 +176,12 @@ const textInputDemo = [{
     title: "Readonly",
     desc: "input에 <code>readonly</code> 속성을 추가합니다.",
     elem: new TextInput(textInputOptions.readonly)
+  },
+  {
+    id: "demo6",
+    title: "No Label",
+    desc: "인풋 필드만 단독으로 사용할 수도 있습니다.",
+    elem: new TextInput(textInputOptions.noLabel)
   }
 ]
 
