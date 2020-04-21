@@ -3,7 +3,6 @@ let inputID = 0;
 function TextInput(param) {
 
   inputID++;
-  info = param || "";
   const {
     label,
     placeholder = "내용을 입력해주세요",
@@ -11,18 +10,16 @@ function TextInput(param) {
     state,
     type,
     hasError
-  } = info;
+  } = param;
 
   this.elem = document.createElement("div");
-  this.elem.classList.add(`kp-input-item`);
+  this.elem.classList.add("kp-input-item");
 
   if (label) {
     this.elem.innerHTML += `<label for="test${inputID}">${label}</label>`;
   }
 
-  this.elem.innerHTML += `
-      <input id="test${inputID}" type="text" placeholder="${placeholder}" value="${value}" />
-      <div class="explain"></div>
+  this.elem.innerHTML += `<input id="test${inputID}" type="text" placeholder="${placeholder}" value="${value}" /><div class="explain"></div>
     `;
 
   if (state) {
@@ -36,7 +33,7 @@ function TextInput(param) {
     this.elem.children[2].innerHTML = hasError;
   }
 
-  document.body.appendChild(this.elem);
+  return this.elem;
 }
 
 var normal = {
@@ -88,12 +85,109 @@ const showCode = (target) => {
 }
 
 
-new TextInput(normal);
-new TextInput(disabled);
-new TextInput(readonly);
-var r = new TextInput(required);
-showCode(r);
-var a = new TextInput(requiredError);
-showCode(a);
-var z = new TextInput(noLabel);
-showCode(z);
+// new TextInput(normal);
+// new TextInput(disabled);
+// new TextInput(readonly);
+// var r = new TextInput(required);
+// showCode(r);
+// var a = new TextInput(requiredError);
+// showCode(a);
+// var z = new TextInput(noLabel);
+// showCode(z);
+
+
+
+const textInputGuide = document.querySelector("#textinput-demos");
+
+const generateCode = (target) => {
+  const html = target.outerHTML;
+  console.log(html)
+  const result = tidy_html5(html, options);
+  console.log(result)
+  const code = result.replace(/</gi, "&lt;");
+
+  return code;
+}
+
+
+var options = {
+  // "indent": "auto",
+  "indent": true,
+  "indent-spaces": 2,
+  "indent-attributes": true,
+  "wrap": 80,
+  "markup": true,
+  "output-xml": false,
+  // "numeric-entities": true,
+  // "quote-marks": true,
+  // "quote-nbsp": false,
+  "show-body-only": true,
+  // "quote-ampersand": false,
+  // "break-before-br": false,
+  // "uppercase-tags": false,
+  // "uppercase-attributes": false,
+  // "drop-font-tags": true,
+  // "tidy-mark": false
+}
+
+function DemoContainer(param) {
+
+  const {
+    id,
+    title,
+    elem
+  } = param;
+
+
+  const code = generateCode(elem);
+
+  const demoCodeTemplate = `
+<div class="demo__code">
+  <div class="code-toggle">
+    <label for="${id}">
+      마크업 확인
+    </label>
+    <input id="${id}" type="checkbox" />
+    <div class="code-contents">
+      <pre><code>${code}</code></pre>
+    </div>
+  </div>
+</div>
+`;
+
+
+  this.demo = document.createElement("div");
+  this.demo.classList.add("demo");
+  this.demo.innerHTML += `<h3>${title}</h3>`;
+
+  this.demoUI = document.createElement("div");
+  this.demoUI.classList.add("demo__ui");
+  this.demoUI.appendChild(elem);
+
+
+  this.demo.appendChild(this.demoUI);
+  this.demo.innerHTML += demoCodeTemplate;
+
+
+  return this.demo;
+
+}
+
+const obj = {
+  id: "demo123",
+  title: "Default",
+  elem: new TextInput(normal)
+}
+
+
+const obj2 = {
+  id: "demo999",
+  title: "Reqruied",
+  elem: new TextInput(required)
+}
+
+
+
+
+textInputGuide.appendChild(new DemoContainer(obj));
+textInputGuide.appendChild(new DemoContainer(obj2));

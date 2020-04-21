@@ -32,122 +32,74 @@
       <div class="contents">
         <div class="guide" id="textinput">
           <h2>Text Inputs</h2>
-          <p>한 줄로 된 텍스트 인풋입니다.</p>
+          <p>한 줄로 된 텍스트 인풋입니다. <code>kp-input-item</code>으로 사용합니다. <code>state-required</code> 또는
+            <code>state-error</code>클래스를 추가해 폼의 상태를 나타낼 수 있습니다. input 태그에 <code>disabled</code>나
+            <code>readonly</code>같은 attribute를 지정해 줄 수도 있습니다.</p>
 
-          <div class="demo">
-            <h3>Basic</h3>
-            <div class="demo__ui">
-              <div class="kp-input-item"><label for="test1">일반 폼</label>
-                <input id="test1" type="text" placeholder="내용을 입력해주세요" value="">
-                <div class="explain"></div>
+          <div id="textinput-demos">
+            <!-- 
+            <div class="demo">
+              <h3>Basic</h3>
+              <div class="demo__ui">
+                <div class="kp-input-item"><label for="test1">일반 폼</label>
+                  <input id="test1" type="text" placeholder="내용을 입력해주세요" value="">
+                  <div class="explain"></div>
+                </div>
               </div>
-            </div>
-            <div class="demo__code">
-              <div class="code-toggle">
-                <label for="demo1">
-                  마크업 확인
-                </label>
-                <input id="demo1" type="checkbox" />
-                <div class="code-contents">
-                  <pre><code>&lt;div class="kp-input-item state-required"&gt;&lt;label for="test4"&gt;필수 입력 폼&lt;/label&gt;
+              <div class="demo__code">
+                <div class="code-toggle">
+                  <label for="demo1">
+                    마크업 확인
+                  </label>
+                  <input id="demo1" type="checkbox" />
+                  <div class="code-contents">
+                    <pre><code>&lt;div class="kp-input-item state-required"&gt;&lt;label for="test4"&gt;필수 입력 폼&lt;/label&gt;
                   &lt;input id="test4" type="text" placeholder="내용을 입력해주세요" value="필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"&gt;
                   &lt;div class="explain"&gt;&lt;/div&gt;
                 &lt;/div&gt;</code></pre>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
 
-          <div class="demo">
-            <h3>Required & Error</h3>
-            <div class="demo__ui">
-              <div class="kp-input-item state-required state-error"><label for="test5">필수 입력 + 에러</label>
-                <input id="test5" type="text" placeholder="에러는 어떤 폼에든 쓸 수 있습니다" value="">
-                <div class="explain">에러가 있으면 이렇게 색상이 바뀌어요!</div>
+            <div class="demo">
+              <h3>Required & Error</h3>
+              <div class="demo__ui">
+                <div class="kp-input-item state-required state-error"><label for="test5">필수 입력 + 에러</label>
+                  <input id="test5" type="text" placeholder="에러는 어떤 폼에든 쓸 수 있습니다" value="">
+                  <div class="explain">에러가 있으면 이렇게 색상이 바뀌어요!</div>
+                </div>
               </div>
-            </div>
-            <div class="demo__code">
-              <div class="code-toggle">
-                <label for="demo2">
-                  마크업 확인
-                </label>
-                <input id="demo2" type="checkbox" />
-                <div class="code-contents">
-                  <pre><code>&lt;div class="kp-input-item state-required"&gt;&lt;label for="test4"&gt;필수 입력 폼&lt;/label&gt;
+              <div class="demo__code">
+                <div class="code-toggle">
+                  <label for="demo2">
+                    마크업 확인
+                  </label>
+                  <input id="demo2" type="checkbox" />
+                  <div class="code-contents">
+                    <pre><code>&lt;div class="kp-input-item state-required"&gt;&lt;label for="test4"&gt;필수 입력 폼&lt;/label&gt;
                   &lt;input id="test4" type="text" placeholder="내용을 입력해주세요" value="필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"&gt;
                   &lt;div class="explain"&gt;&lt;/div&gt;
                 &lt;/div&gt;</code></pre>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </div> -->
 
+
+          </div>
 
 
 
         </div>
-        <div class="guide" id="radioGroup">
-          <h2>Radio Group</h2>
-          <p>한 줄로 된 텍스트 인풋입니다.</p>
 
-          <div class="demo">
-            <h3>Basic</h3>
-            <div class="demo__ui">
-              <div class="kp-input-item"><label for="test1">일반 폼</label>
-                <input id="test1" type="text" placeholder="내용을 입력해주세요" value="">
-                <div class="explain"></div>
-              </div>
-            </div>
-            <div class="demo__code">
-              <div class="code-toggle">
-                <label for="demo1">
-                  마크업 확인
-                </label>
-                <input id="demo1" type="checkbox" />
-                <div class="code-contents">
-                  <pre><code>&lt;div class="kp-input-item state-required"&gt;&lt;label for="test4"&gt;필수 입력 폼&lt;/label&gt;
-                    &lt;input id="test4" type="text" placeholder="내용을 입력해주세요" value="필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"&gt;
-                    &lt;div class="explain"&gt;&lt;/div&gt;
-                  &lt;/div&gt;</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="demo">
-            <h3>Required & Error</h3>
-            <div class="demo__ui">
-              <div class="kp-input-item state-required state-error"><label for="test5">필수 입력 + 에러</label>
-                <input id="test5" type="text" placeholder="에러는 어떤 폼에든 쓸 수 있습니다" value="">
-                <div class="explain">에러가 있으면 이렇게 색상이 바뀌어요!</div>
-              </div>
-            </div>
-            <div class="demo__code">
-              <div class="code-toggle">
-                <label for="demo2">
-                  마크업 확인
-                </label>
-                <input id="demo2" type="checkbox" />
-                <div class="code-contents">
-                  <pre><code>&lt;div class="kp-input-item state-required"&gt;&lt;label for="test4"&gt;필수 입력 폼&lt;/label&gt;
-                    &lt;input id="test4" type="text" placeholder="내용을 입력해주세요" value="필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"&gt;
-                    &lt;div class="explain"&gt;&lt;/div&gt;
-                  &lt;/div&gt;</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-        </div>
       </div>
     </main>
 
   </div>
+  <script src="assets/js/vendor/tidy.min.js"></script>
+  <script src="assets/js/TextInput.js"></script>
 
 </body>
 
