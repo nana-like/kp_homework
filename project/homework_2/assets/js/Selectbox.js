@@ -26,7 +26,7 @@ class Selectbox {
       this.option = document.createElement("OPTION");
       this.option.value = values[i];
       this.option.text = labels[i];
-      console.log(this.option);
+      // console.log(this.option);
       this.elem.children[0].appendChild(this.option);
     }
     this.elem.innerHTML += `<div class="kp-selected" data-text=""></div>`;

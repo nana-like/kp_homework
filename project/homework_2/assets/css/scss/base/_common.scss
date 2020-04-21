@@ -1,140 +1,144 @@
-// ---
-// common
-// ---
+// ** common.scss
 
+// 사용자 정의 속성
 :root {
+  --maxW: 1200px;
+  --minW: 320px;
   --black: #212529;
   --gray: #788087;
   --blue: #1890ff;
   --yellow: #fff8ad;
 }
 
+html {
+  @include res {
+    font-size: 59%;
+  }
+}
+
 body {
-  font-size: 15px;
+  font-size: 1.5rem;
 }
 
 .wrap {
 
   .header {
+    min-width: var(--minW);
     height: 70px;
-    padding: 0 20px;
     color: var(--black);
     border-bottom: 1px solid #ddd;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .05);
     background-color: #fff;
 
+
     &__container {
-      max-width: 980px;
+      height: 100%;
+      max-width: var(--maxW);
+      padding: 0 30px;
       margin: 0 auto;
       @include flexbox();
       @include justify-content(space-between);
-      @include align-items(flex-end);
+      @include align-items(center);
+
+      @include res {
+        padding: 0 20px;
+      }
+    }
+
+    .title {
+      margin-top: -6px;
     }
 
     .logo {
       display: inline-block;
-      margin: 6px 4px 0 0;
+      margin: 4px 4px 0 0;
       width: 58px;
       vertical-align: middle;
     }
 
     .title__text {
-      font-size: 21px;
+      font-size: 2.1rem;
     }
 
     .version {
       opacity: 0.8;
       font-size: 90%;
       color: var(--gray);
-      margin-bottom: 2px;
+      margin-top: 4px;
     }
-
-
   }
 
   .main {
-    display: grid;
-    grid-template-columns: minmax(20%, 200px) minmax(80%, 780px);
-    // grid-template-rows: 56px 1fr;
-    max-width: 980px;
-    margin: 80px auto 120px;
-    padding: 0 20px;
+    // display: grid;
+    // column-gap: 20px;
+    // grid-template-columns: 180px minmax(420px, 1fr);
+    // max-width: var(--maxW);
+    // min-width: var(--minW);
+    // margin: 40px auto 40px;
+    // padding: 0 30px;
+
+    @include flexbox();
+    max-width: var(--maxW);
+    min-width: var(--minW);
+    margin: 40px auto 40px;
+    padding: 0 30px;
+
+    @include res {
+      display: block;
+      padding: 0 20px;
+      margin: 0;
+    }
+  }
+
+  .contents {
+    border-left: 1px solid #f0f0f0;
+    padding-left: 60px;
+    padding-top: 60px;
+    width: calc(100% - 180px);
+    margin-left: 180px;
+
+    @include res {
+      width: 100%;
+      margin-left: 0;
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+
+
+  pre {
+    margin: 0;
+    text-align: left;
+
+    .hljs {
+
+      padding: 20px 30px;
+    }
   }
 }
 
 
 .nav {
-  outline: 3px sodlid red;
+  position: fixed;
+  width: 180px;
+  height: 100%;
+  padding-top: 60px;
+
+  @include res {
+    display: none;
+  }
 
   .nav__link {
     display: block;
-    padding: 10px 14px;
+    padding: 10px 14px 10px 0;
     color: var(--gray);
 
     &:hover {
-      color: var(--black);
+      color: #1e1e1e;
     }
   }
 }
 
-.blind {
-  // 👆 SEO용 텍스트 숨기기
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-}
-
-
-.scroll-container {
-  // 👆 스크롤 영역 지정할 때 사용
-  overflow-y: auto;
-}
-
-.-scroll-disabled {
-  // 👆 스크롤 막을 때 사용
-  height: 100%;
-  overflow: hidden;
-}
-
-.kp-group {}
-
-.kp-group-title {
-  display: block;
-  margin: 0 0 0.4rem 0;
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: none;
-}
-
-.kp-line {
-  @include flexbox();
-
-  .full-size {
-    flex: 1;
-  }
-
-  &.align-center {
-    @include align-items(center);
-  }
-
-
-  .kp-selectbox,
-  .kp-input-item,
-  .kp-radio-group,
-  .kp-btn {
-    // flex: 1;
-
-    &:not(:first-child) {
-      margin-left: 10px;
-    }
-  }
-}
-
-/////@include
 
 
 .guide {
@@ -143,44 +147,66 @@ body {
   padding-bottom: 140px;
   border-bottom: 1px solid rgb(203, 203, 203);
 
-
+  @include res {
+    margin-top: 100px;
+    padding-bottom: 100px;
+  }
 
   &:first-child {
     margin-top: 0;
   }
 
   h2 {
-    font-size: 40px;
+    font-size: 4rem;
     margin-bottom: 10px;
   }
 
-  h3 {
-    font-size: 21px;
-  }
-
-  .desc {
-    margin: 4px 0 8px;
-    font-size: 14px;
+  h2+p {
+    line-height: 160%;
 
     code {
       padding: 3px;
       margin-right: 2px;
+      font-size: 1.12em;
+      background-color: var(--yellow);
+    }
+  }
+
+  h3 {
+    font-size: 2.1rem;
+  }
+
+  .desc {
+    margin: 6px 0 8px;
+    font-size: 1em;
+
+    @include res {
+      margin: 10px 0 14px;
+    }
+
+    code {
+      padding: 3px;
+      margin-right: 2px;
+      font-size: 1.12em;
       background-color: var(--yellow);
     }
   }
 
   .demo {
-    margin-top: 40px;
+    margin-top: 4rem;
     width: 100%;
   }
 
   .demo__ui {
+    overflow-y: auto;
     margin-top: 10px;
     padding: 20px 30px;
     border: 1px solid #f0f0f0;
-    ;
-  }
 
+    @include res {
+      padding: 15px 20px;
+    }
+  }
 
   .code-toggle {
     text-align: right;
@@ -218,17 +244,43 @@ body {
     display: none;
     overflow-x: auto;
     border: 1px solid #e2e2e2;
-    ;
+    font-size: 1.15em;
   }
 }
 
+.more {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
 
-pre {
-  margin: 0;
-  text-align: left;
-
-  .hljs {
-
-    padding: 20px 30px;
+  .more__link {
+    color: var(--blue);
+    text-decoration: underline;
   }
+}
+
+.footer {
+  min-width: var(--minW);
+  color: #999;
+  background: #1e1e1e;
+
+  &__container {
+    height: 100%;
+    max-width: var(--maxW);
+    padding: 30px;
+    margin: 0 auto;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(space-between);
+
+    @include res {
+      padding: 20px;
+    }
+  }
+
+  .logo {
+    width: 64px;
+  }
+
+
 }

@@ -3,6 +3,7 @@
 // 인풋 아이템
 .kp-input-item {
   font-size: 14px;
+  min-width: 150px;
 
   &>label {
     display: block;
