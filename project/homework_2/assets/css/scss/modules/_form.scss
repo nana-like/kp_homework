@@ -20,9 +20,9 @@
     padding: 0.6em 0.75em;
     height: 38px;
     font-size: 1em;
+    color: $CL-black;
     background-color: #fff;
     border: 1px solid $CL-input-border;
-    color: $CL-black;
     border-radius: 0.35rem;
     box-shadow: 0 0 0 0 transparent inset;
     transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
@@ -33,7 +33,7 @@
     }
   }
 
-  &>.explain {
+  .explain {
     position: relative;
     max-height: 0;
     font-size: 90%;
@@ -45,7 +45,7 @@
 }
 
 // State별 스타일링
-.kp-form-item {
+.kp-input-item {
 
   // 👋 에러가 난 경우
   &.state-error {
@@ -100,4 +100,33 @@
       border: 1px solid rgba(34, 36, 38, 0.4);
     }
   }
+}
+
+
+// ***** 임의
+
+
+.test {
+
+  .selectbox {
+    min-width: 40px;
+    padding: 0 4px;
+    height: 38px;
+    border: 1px solid #aaa;
+  }
+
+  button {
+    width: 38px;
+    height: 38px;
+    background-color: crimson;
+  }
+}
+
+.flexbox {
+  @include flexbox();
+}
+
+.selectbox-full,
+.kp-input-item {
+  flex-grow: 1 !important;
 }

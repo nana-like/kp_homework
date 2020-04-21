@@ -62,9 +62,9 @@ const radioGroupItem = {
   labels: ["하나", "둘", "셋"],
 }
 const radioGroupItem2 = {
-  labels: ["사용할 수 없는 라디오 버튼", "선택된 라디오 버튼", "라디오 버튼"],
+  labels: ["라디오 버튼1", "라디오 버튼 2", "사용할 수 없는 라디오 버튼3", "라디오 버튼4"],
   checkedIndex: 1,
-  disabledIndex: 0
+  disabledIndex: 2
 }
 
 var ra1 = new RadioGroup(radioGroupItem);

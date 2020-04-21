@@ -9,8 +9,72 @@
 </head>
 
 <body>
-  <script src="assets/js/RadioGroup.js"></script>
-  <script src="assets/js/TextInput.js"></script>
+
+  <div class="kp-selectbox state-disabled">
+    <select class="kp-select-wrap" name="" id="" title="셀렉트 박스" disabled>
+      <option value="1">사용할 수 없는 옵션</option>
+      <option value="2">옵션 2</option>
+      <option value="3">옵션 3</option>
+    </select>
+    <div class="kp-selected" data-text=""></div>
+  </div>
+
+  <div class="test">
+    <div class="group-title">Tit</div>
+    <div class="group flexbox">
+
+
+      <div class="kp-selectbox">
+        <select class="kp-select-wrap" name="" id="" title="셀렉트 박스">
+          <option value="1"> 1</option>
+          <option value="2">옵션 2</option>
+          <option value="3">옵션 3</option>
+        </select>
+        <div class="kp-selected" data-text=""></div>
+      </div>
+      <div class="kp-input-item state-error">
+        <input id="test6" type="text" placeholder="라벨 없이 인풋 필드만 사용할 수도 있습니다" value="">
+        <div class="explain">에러 삐용</div>
+      </div>
+      <button>나는 버튼이당</button>
+    </div>
+  </div>
+  <br />
+  <div class="test flexbox">
+
+
+    <div class="kp-selectbox width-full">
+      <select class="kp-select-wrap" name="" id="" title="셀렉트 박스">
+        <option value="1"> 1</option>
+        <option value="2">옵션 2</option>
+        <option value="3">옵션 3</option>
+      </select>
+      <div class="kp-selected" data-text=""></div>
+    </div>
+    <div class="kp-selectbox width-full">
+      <select class="kp-select-wrap testbox" name="" id="" title="셀렉트 박스">
+        <option value="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </option>
+        <option value="1">Id minim enim dolor pariatur ex do pariatur cupidatat non. Aliquip et ex nostrud tempor id.
+        </option>
+        <option value="2">Nostrud dolore adipisicing enim et ad nisi.</option>
+        <option value="3">Cillum ut minim ad velit nulla magna labore ea mollit elit ullamco do qui Lorem.</option>
+        <option value="4">Labore officia sunt nulla dolore tempor sunt. </option>
+      </select>
+      <div class="kp-selected" data-text=""></div>
+    </div>
+    <div class="kp-input-item state-error">
+      <input id="test6" type="text" placeholder="라벨 없이 인풋 필드만 사용할 수도 있습니다" value="">
+      <div class="explain">에러 삐용</div>
+    </div>
+  </div>
+
+  <hr>
+  <hr>
+  <hr>
+  <hr>
+  <script src="assets/js/Selectbox.js"></script>
+  <!-- <script src="assets/js/RadioGroup.js"></script> -->
+  <!--  <script src="assets/js/TextInput.js"></script> -->
 </body>
 
 </html>
