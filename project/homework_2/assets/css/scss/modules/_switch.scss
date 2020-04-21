@@ -1,0 +1,52 @@
+.kp-switch {
+  height: 36px;
+
+  // background: #00000036;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+
+  @include flexbox();
+  @include align-items(center);
+
+  // .switch-wrap {
+  //   position: relative;
+  // }
+
+  .switch-wrap {
+    min-width: 58px;
+    height: 28px;
+    background-color: rgba(0, 0, 0, .25);
+    border-radius: 100px;
+    transition: all .36s;
+    cursor: pointer;
+
+    &:after {
+      z-index: 1;
+      position: absolute;
+      top: 8px;
+      left: 4px;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 18px;
+      content: '';
+      box-shadow: 0 2px 4px 0 rgba(0, 35, 11, .2);
+      transition: all .36s cubic-bezier(.78, .14, .15, .86);
+    }
+  }
+
+  input {
+    @include invisible;
+
+    &:checked+.switch-wrap {
+      background-color: $CL-focus;
+
+      &:after {
+        left: 100%;
+        margin-left: -4px;
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

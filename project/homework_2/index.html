@@ -9,86 +9,146 @@
 </head>
 
 <body>
+  <h6><a href="./example.html">example.html</a></h6>
 
-  <div class="kp-selectbox state-disabled">
-    <select class="kp-select-wrap" name="" id="" title="셀렉트 박스" disabled>
-      <option value="1">사용할 수 없는 옵션</option>
-      <option value="2">옵션 2</option>
-      <option value="3">옵션 3</option>
-    </select>
-    <div class="kp-selected" data-text=""></div>
-  </div>
-
-  <div class="test">
-    <div class="kp-group">
-      <div class="kp-group-title">Tit</div>
-
-      <div class="kp-flexbox">
-
-
-        <div class="kp-selectbox">
-          <select class="kp-select-wrap" name="" id="" title="셀렉트 박스">
-            <option value="1"> 1</option>
-            <option value="2">옵션 2</option>
-            <option value="3">옵션 3</option>
-          </select>
-          <div class="kp-selected" data-text=""></div>
-        </div>
-        <div class="kp-input-item state-error">
-          <input id="test6" type="text" placeholder="라벨 없이 인풋 필드만 사용할 수도 있습니다" value="">
-          <div class="explain">에러 삐용</div>
-        </div>
-        <button class="kp-btn btn-primary">나는 버튼이당</button>
-
-
+  <div class="wrap">
+    <header class="header">
+      <div class="header__container">
+        <h1 class="title">
+          <img src="./assets/images/kp-logo.png" alt="Kakao Pay" class="logo" />
+          <span class="title__text">컴포넌트 가이드</span>
+        </h1>
+        <div class="version">ver.1</div>
       </div>
-    </div>
+    </header>
+    <main class="main">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="/#textinput">Text Inputs</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="contents">
+        <div class="guide" id="textinput">
+          <h2>Text Inputs</h2>
+          <p>한 줄로 된 텍스트 인풋입니다.</p>
+
+          <div class="demo">
+            <h3>Basic</h3>
+            <div class="demo__ui">
+              <div class="kp-input-item"><label for="test1">일반 폼</label>
+                <input id="test1" type="text" placeholder="내용을 입력해주세요" value="">
+                <div class="explain"></div>
+              </div>
+            </div>
+            <div class="demo__code">
+              <div class="code-toggle">
+                <label for="demo1">
+                  마크업 확인
+                </label>
+                <input id="demo1" type="checkbox" />
+                <div class="code-contents">
+                  <pre><code>&lt;div class="kp-input-item state-required"&gt;&lt;label for="test4"&gt;필수 입력 폼&lt;/label&gt;
+                  &lt;input id="test4" type="text" placeholder="내용을 입력해주세요" value="필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"&gt;
+                  &lt;div class="explain"&gt;&lt;/div&gt;
+                &lt;/div&gt;</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="demo">
+            <h3>Required & Error</h3>
+            <div class="demo__ui">
+              <div class="kp-input-item state-required state-error"><label for="test5">필수 입력 + 에러</label>
+                <input id="test5" type="text" placeholder="에러는 어떤 폼에든 쓸 수 있습니다" value="">
+                <div class="explain">에러가 있으면 이렇게 색상이 바뀌어요!</div>
+              </div>
+            </div>
+            <div class="demo__code">
+              <div class="code-toggle">
+                <label for="demo2">
+                  마크업 확인
+                </label>
+                <input id="demo2" type="checkbox" />
+                <div class="code-contents">
+                  <pre><code>&lt;div class="kp-input-item state-required"&gt;&lt;label for="test4"&gt;필수 입력 폼&lt;/label&gt;
+                  &lt;input id="test4" type="text" placeholder="내용을 입력해주세요" value="필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"&gt;
+                  &lt;div class="explain"&gt;&lt;/div&gt;
+                &lt;/div&gt;</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+        <div class="guide" id="radioGroup">
+          <h2>Radio Group</h2>
+          <p>한 줄로 된 텍스트 인풋입니다.</p>
+
+          <div class="demo">
+            <h3>Basic</h3>
+            <div class="demo__ui">
+              <div class="kp-input-item"><label for="test1">일반 폼</label>
+                <input id="test1" type="text" placeholder="내용을 입력해주세요" value="">
+                <div class="explain"></div>
+              </div>
+            </div>
+            <div class="demo__code">
+              <div class="code-toggle">
+                <label for="demo1">
+                  마크업 확인
+                </label>
+                <input id="demo1" type="checkbox" />
+                <div class="code-contents">
+                  <pre><code>&lt;div class="kp-input-item state-required"&gt;&lt;label for="test4"&gt;필수 입력 폼&lt;/label&gt;
+                    &lt;input id="test4" type="text" placeholder="내용을 입력해주세요" value="필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"&gt;
+                    &lt;div class="explain"&gt;&lt;/div&gt;
+                  &lt;/div&gt;</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="demo">
+            <h3>Required & Error</h3>
+            <div class="demo__ui">
+              <div class="kp-input-item state-required state-error"><label for="test5">필수 입력 + 에러</label>
+                <input id="test5" type="text" placeholder="에러는 어떤 폼에든 쓸 수 있습니다" value="">
+                <div class="explain">에러가 있으면 이렇게 색상이 바뀌어요!</div>
+              </div>
+            </div>
+            <div class="demo__code">
+              <div class="code-toggle">
+                <label for="demo2">
+                  마크업 확인
+                </label>
+                <input id="demo2" type="checkbox" />
+                <div class="code-contents">
+                  <pre><code>&lt;div class="kp-input-item state-required"&gt;&lt;label for="test4"&gt;필수 입력 폼&lt;/label&gt;
+                    &lt;input id="test4" type="text" placeholder="내용을 입력해주세요" value="필수 입력 폼은 라벨 오른쪽에 별이 붙습니다"&gt;
+                    &lt;div class="explain"&gt;&lt;/div&gt;
+                  &lt;/div&gt;</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </main>
+
   </div>
-  <br />
-  <div class="kp-flexbox">
-    <button class="kp-btn btn-primary">버튼1</button>
-    <button class="kp-btn btn-primary" disabled>버튼2</button>
-    <button class="kp-btn">버튼3</button>
-    <button class="kp-btn" disabled>버튼3</button>
-    <button class="kp-btn size-lg">size-lg</button>
-  </div>
-  <button class="kp-btn btn-primary size-lg full fixed">size-full</button>
-  <!-- <div class="test flexbox">
 
-
-    <div class="kp-selectbox width-full">
-      <select class="kp-select-wrap" name="" id="" title="셀렉트 박스">
-        <option value="1"> 1</option>
-        <option value="2">옵션 2</option>
-        <option value="3">옵션 3</option>
-      </select>
-      <div class="kp-selected" data-text=""></div>
-    </div>
-    <div class="kp-selectbox width-full">
-      <select class="kp-select-wrap testbox" name="" id="" title="셀렉트 박스">
-        <option value="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </option>
-        <option value="1">Id minim enim dolor pariatur ex do pariatur cupidatat non. Aliquip et ex nostrud tempor id.
-        </option>
-        <option value="2">Nostrud dolore adipisicing enim et ad nisi.</option>
-        <option value="3">Cillum ut minim ad velit nulla magna labore ea mollit elit ullamco do qui Lorem.</option>
-        <option value="4">너무 긴 텍스트는 줄임표 처리가 되므로 짧게 작성하면 좋습니다.</option>
-      </select>
-      <div class="kp-selected" data-text=""></div>
-    </div>
-    <div class="kp-input-item state-error">
-      <input id="test6" type="text" placeholder="라벨 없이 인풋 필드만 사용할 수도 있습니다" value="">
-      <div class="explain">에러 삐용</div>
-    </div>
-  </div> -->
-
-  <hr>
-  <hr>
-  <hr>
-  <div class="blank">a</div>
-  <hr>
-  <script src="assets/js/Selectbox.js"></script>
-  <!-- <script src="assets/js/RadioGroup.js"></script> -->
-  <!-- <script src="assets/js/TextInput.js"></script> -->
 </body>
 
 </html>
