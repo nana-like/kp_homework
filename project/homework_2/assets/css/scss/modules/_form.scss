@@ -42,6 +42,11 @@
     visibility: hidden;
     // transition: visibility .1s, transform .3s ease, opacity .3s ease;
   }
+
+  // 👇 마진값 추가
+  &:not(:first-child) {
+    margin-left: 10px;
+  }
 }
 
 // State별 스타일링
@@ -120,6 +125,7 @@
     height: 38px;
     background-color: crimson;
   }
+
 }
 
 .flexbox {

@@ -2,6 +2,7 @@
 
 // 셀렉트 박스 아이템
 .kp-selectbox {
+  position: relative;
   display: inline-block;
   font-size: 14px;
   min-width: 74px;
@@ -65,10 +66,6 @@
 }
 
 
-.kp-selectbox {
-  position: relative;
-  width: 100%;
-}
 
 .kp-selected {
   position: absolute;
