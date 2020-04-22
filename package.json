@@ -24,11 +24,15 @@
     "gulp-uglify-es": "^2.0.0"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start:h1": "gulp browserSync:h1",
     "start:h2": "gulp browserSync:h2",
     "gulp:h1": "gulp dev:h1",
     "gulp:h2": "gulp dev:h2",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.3"
   },
   "author": "nykim",
   "license": "ISC"
