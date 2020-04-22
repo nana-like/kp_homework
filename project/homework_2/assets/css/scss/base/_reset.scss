@@ -1,7 +1,4 @@
-// ---
-// reset
-// ---
-
+// ** reset.scss
 
 *,
 *::before,
@@ -158,21 +155,15 @@ input {
   -webkit-border-radius: 0;
   background-color: transparent;
   border: 1px solid transparent;
-
-  &:focus {
-    outline: 0;
-  }
+  outline: 0;
 
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active,
   &:-internal-autofill-selected {
-    // background-color: #fff;
     transition: background-color 5000s 0s;
     -webkit-text-fill-color: #101010 !important;
-    // -webkit-transition: background-color 9999s ease-out;
-    // -webkit-box-shadow: 0 0 0px 1000px white inset !important;
   }
 }
 
@@ -217,19 +208,9 @@ input[type="email"] {
 input:disabled,
 input[readonly] {
   //iOS에서 disabled처리한 input에 기본적으로 적용되는 스타일 제거
-  // opacity: 1;
   -webkit-text-fill-color: inherit;
 }
 
-input[readonly] {
-  background-color: #efefef;
-  border-color: #efefef;
-
-  &:hover,
-  &:focus {
-    border-color: #efefef;
-  }
-}
 
 html {
   position: relative;
@@ -243,7 +224,7 @@ html {
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
   font-size: 62.5%; //1em = 10px로 설정
-  font-weight: $fw-m;
+  font-weight: 400;
 }
 
 body {
@@ -254,7 +235,7 @@ body {
   @include font-main;
   color: #221714;
   text-align: left;
-  font-weight: $fw-m;
+  font-weight: 400;
   line-height: 1.5;
   font-size: 1.5rem;
   background-color: #fff;

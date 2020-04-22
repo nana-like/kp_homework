@@ -1,4 +1,4 @@
-// ** _form.scss
+// ** textinput.scss
 
 // 인풋 아이템
 .kp-input-item {
@@ -7,7 +7,7 @@
 
   &>label {
     display: block;
-    margin: 0 0 0.4rem 0;
+    margin: 0 0 3px 0;
     color: $CL-black;
     font-size: 1em;
     font-weight: 700;
@@ -18,16 +18,15 @@
     z-index: 1;
     position: relative;
     width: 100%;
-    padding: 0.6em 0.75em;
+    padding: 8px 11px;
     height: 36px;
     font-size: 1em;
     color: $CL-black;
     background-color: #fff;
     border: 1px solid $CL-input-border;
-    border-radius: 0.35rem;
+    border-radius: 3.5px;
     box-shadow: 0 0 0 0 transparent inset;
     transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
-    // margin-bottom: 20px;
 
     &:focus {
       border-color: $CL-focus;
@@ -38,16 +37,11 @@
     position: relative;
     max-height: 0;
     font-size: 90%;
+    padding: 3px 11px 0;
     color: $CL-error;
     opacity: 0;
     visibility: hidden;
-    // transition: visibility .1s, transform .3s ease, opacity .3s ease;
   }
-
-  // 👇 마진값 추가
-  // &:not(:last-child) {
-  //   margin-right: 10px;
-  // }
 }
 
 // State별 스타일링
@@ -68,16 +62,8 @@
       min-height: 24px;
       max-height: 100%;
       visibility: visible;
-      padding: 3px 0.75em 0;
     }
   }
-
-  // 👇 사용 불가 상태인 경우
-  // &.state-disabled{
-  //   opacity: 0.5;
-  //   @include pointer-none;
-  //   @include select-none;
-  // }
 
   // 👋 필수입력인 경우
   &.state-required {
@@ -92,37 +78,23 @@
   }
 
   // 👋 읽기전용인 경우
-  // &.state-readonly {
-  //   input {
-  //     color: rgba(0, 0, 0, 0.55);
-  //   }
+  input[readonly] {
+    color: rgba(0, 0, 0, 0.55);
 
-  //   input:hover {
-  //     border: 1px solid rgba(34, 36, 38, 0.2);
-  //   }
+    &:hover {
+      border: 1px solid rgba(34, 36, 38, 0.2);
+    }
 
-  //   input:focus {
-  //     color: rgba(0, 0, 0, 0.75);
-  //     border: 1px solid rgba(34, 36, 38, 0.4);
-  //   }
-  // }
-}
-
-.kp-input-item input:disabled {
-  opacity: 0.5;
-  @include pointer-none;
-  @include select-none;
-}
-
-.kp-input-item input[readonly] {
-  color: rgba(0, 0, 0, 0.55);
-
-  &:hover {
-    border: 1px solid rgba(34, 36, 38, 0.2);
+    &:focus {
+      color: rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(34, 36, 38, 0.4);
+    }
   }
 
-  &:focus {
-    color: rgba(0, 0, 0, 0.75);
-    border: 1px solid rgba(34, 36, 38, 0.4);
+  // 👋 사용불가인 경우
+  input:disabled {
+    opacity: 0.5;
+    @include pointer-none;
+    @include select-none;
   }
 }

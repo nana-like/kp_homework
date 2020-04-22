@@ -1,13 +1,8 @@
-// ---
-// mediaQueries
-// ---
-
+// ** mediaQueries.scss
 
 // Break Point
-$bp: 840px; //사용
+$bp: 840px;
 
-// ---------- * ----------
-// Tablet
 @mixin res {
   @media screen and (max-width: #{$bp}) {
     @content;

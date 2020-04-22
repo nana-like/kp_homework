@@ -1,17 +1,13 @@
+// ** switch.scss
+
+// 스위치 형태의 체크박스
 .kp-switch {
   height: 36px;
-
-  // background: #00000036;
   position: relative;
   vertical-align: middle;
   cursor: pointer;
-
   @include flexbox();
   @include align-items(center);
-
-  // .switch-wrap {
-  //   position: relative;
-  // }
 
   .switch-wrap {
     position: relative;
@@ -38,9 +34,10 @@
     }
   }
 
-  input {
+  input[type=checkbox] {
     @include invisible;
 
+    // 👋 체크된 경우
     &:checked+.switch-wrap {
       background-color: $CL-focus;
 
@@ -50,85 +47,13 @@
         transform: translateX(-100%);
       }
     }
-  }
-}
 
-.switch-text {
-  position: relative;
-  height: 100%;
-  padding: 0 2px 0 6px;
-  font-size: 12px;
-  color: var(--gray);
-  vertical-align: middle;
-
-  .text-contents {
-    position: absolute;
-    // width: 100%;
-    // height: 100%;
-    top: 0;
-    left: 0;
-
-    &.off {
-      opacity: 1;
-      text-align: right;
-
-    }
-  }
-
-}
-
-.kp-switch {
-  .switch-text.off {
-    // display: block;
-    visibility: visible;
-    color: red;
-  }
-
-  .switch-text.on {
-    // display: none;
-    visibility: hidden;
-    max-width: 0;
-  }
-
-  input:checked+.switch-wrap {
-
-    .switch-text.off {
-      // display: none;
-      visibility: hidden;
-      max-width: 0;
-    }
-
-    .switch-text.on {
-      // display: block;
-
-      visibility: visible;
-    }
-  }
-}
-
-
-.kp-switch.size-lg {
-  height: 48px;
-
-  .switch-wrap {
-    min-width: 66px;
-    height: 35px;
-
-    &:after {
-      top: 11px;
-      left: 5px;
-      width: 26px;
-      height: 26px;
-    }
-  }
-}
-
-
-.kp-switch {
-  input:disabled {
-    &+label {
-      opacity: 0.5;
-      @include pointer-none;
+    // 👋 사용불가인 경우
+    &:disabled {
+      &+label {
+        opacity: 0.5;
+        @include pointer-none;
+      }
     }
   }
 }

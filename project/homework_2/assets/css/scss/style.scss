@@ -1,21 +1,20 @@
 /*! style.css */
 
-// Font
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+// font (CDN)
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 
 // helpers
 @import "helpers/variables";
 @import "helpers/mixins";
 @import "helpers/mediaQueries";
+@import "helpers/svg";
 
 // base
 @import "base/reset";
-@import "base/animation";
-@import "base/svg";
 
 // modules
-@import "modules/form";
-@import "modules/radio";
+@import "modules/textinput";
+@import "modules/radio-group";
 @import "modules/selectbox";
 @import "modules/button";
 @import "modules/switch";

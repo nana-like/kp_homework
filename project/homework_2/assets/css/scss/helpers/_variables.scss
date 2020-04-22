@@ -1,36 +1,18 @@
 // ** variables.scss
 // ** 글로벌 변수
 
-
 // path
 $PATH-IMAGE: "../images/";
-
-// layout
-$IMAGE-WIDTH: 750;
-$MAX-WIDTH: 769px;
-$MIN-WIDTH: 360px;
-
-
-// z-index
-$Z-TRANSFER-BTN: 50;
-$Z-EVENT-CONTENTS: 40;
-$Z-EVENT-PAGE: 30;
-$Z-MAIN-BTN: 20;
-$Z-TOTAL-REWARD: 10;
-$Z-COIN-DROP: 5;
 
 
 // color
 $CL-BG: #25170f;
-
 $CL-black: rgba(0, 0, 0, .87);
 $CL-gray: rgba(0, 0, 0, .65);
 $CL-error: #ff4d4f;
 $CL-focus: #40a9ff;
+$CL-active: #096dd9;
+$CL-primary: #1890ff;
+$CL-active-bg: rgba(219, 239, 255, 0.5);
 $CL-input-border: rgba(34, 34, 34, 0.2);
-
-
-
-$fw-b: 700;
-$fw-m: 400;
-$fw-l: 300;
+$CL-disabled-bg: #f5f5f5;

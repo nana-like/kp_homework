@@ -2,25 +2,11 @@
 // ** 믹스인
 
 
-// 👇 폰트 (Spoqa Han Sans)
+// 메인 폰트
 @mixin font-main {
-  font-family: "Spoqa Han Sans", AppleGothic, sans-serif, Helvetica;
+  font-family: "Noto Sans KR", AppleGothic, sans-serif, Helvetica;
 }
 
-
-@function getPercent($px) {
-  $size: $px/$IMAGE-WIDTH * 100%;
-  @return $size;
-}
-
-@mixin percentHeight($height) {
-  padding-bottom: getPercent($height);
-}
-
-@mixin percentSize($width, $height) {
-  width: getPercent($width);
-  padding-bottom: getPercent($height);
-}
 
 // 글자 줄임 표시
 @mixin ellipsis($lines: 1) {
@@ -66,72 +52,6 @@
   background-size: 100%;
 }
 
-// 그라디언트 생성
-@mixin horizontal-gradient($from, $to, $stop: 100%) {
-  // fallback/image non-cover color
-  background-color: $from;
-  // Firefox 3.6+
-  background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
-  // Safari 4+, Chrome 1+
-  background-image: -webkit-gradient(linear,
-      left top,
-      right top,
-      color-stop(0%, $from),
-      color-stop($stop, $to));
-  // Safari 5.1+, Chrome 10+
-  background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
-  // Opera 11.10+
-  background-image: -o-linear-gradient(left, $from 0%, $to $stop);
-  // IE10+
-  background: -ms-linear-gradient(left, $from 0%, $to $stop);
-  // Standard
-  background: linear-gradient(to right, $from 0%, $to $stop);
-  // IE6-9
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to', GradientType=1);
-}
-
-//keyframes
-@mixin keyframes($animation-name: animaton) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
-
-  @keyframes #{$animation-name} {
-    @content;
-  }
-}
-
-//animation
-@mixin animation($animation, $duration, $repeat:1, $delay: 0) {
-  -webkit-animation-delay: $delay;
-  -webkit-animation-duration: $duration;
-  -webkit-animation-name: $animation;
-  -webkit-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-
-  -moz-animation-delay: $delay;
-  -moz-animation-duration: $duration;
-  -moz-animation-name: $animation;
-  -moz-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-
-  -o-animation-delay: $delay;
-  -o-animation-duration: $duration;
-  -o-animation-name: $animation;
-  -o-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-
-  animation-delay: $delay;
-  animation-duration: $duration;
-  animation-name: $animation;
-  animation-fill-mode: forwards;
-  animation-iteration-count: $repeat;
-  /* this prevents the animation from restarting! */
-}
 
 // Flexbox display
 @mixin flexbox() {
@@ -303,13 +223,6 @@
   user-select: none;
 }
 
-// backface-visibility:hidden 처리
-@mixin backface-hide {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
 
 // placeholder
 @mixin placeholder {
@@ -328,46 +241,4 @@
   &:-ms-input-placeholder {
     @content;
   }
-}
-
-// Browser Prefixes
-@mixin transform($transforms) {
-  -webkit-transform: $transforms;
-  -moz-transform: $transforms;
-  -ms-transform: $transforms;
-  transform: $transforms;
-}
-
-// Rotate
-@mixin rotate($deg) {
-  @include transform(rotate(#{$deg}deg));
-}
-
-// Scale
-@mixin scale($scale) {
-  @include transform(scale($scale));
-}
-
-// Translate
-@mixin translate($x, $y) {
-  @include transform(translate($x, $y));
-}
-
-// Skew
-@mixin skew($x, $y) {
-  @include transform(skew(#{$x}deg, #{$y}deg));
-}
-
-// Transform Origin
-@mixin transform-origin($origin) {
-  -webkit-transform-origin: $origin;
-  -moz-transform-origin: $origin;
-  -ms-transform-origin: $origin;
-  transform-origin: $origin;
-}
-
-@mixin center() {
-  @include flexbox;
-  @include justify-content(center);
-  @include align-items(center);
 }
