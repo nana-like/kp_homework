@@ -2,25 +2,41 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EXAMPLE (TODO:수정 예정)</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>컴포넌트 예제</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta property="og:site_name" content="컴포넌트 예제" />
+  <meta property="og:title" content="컴포넌트 예제" />
+  <meta property="og:description" content="사내 UI 컴포넌트를 활용한 회원 가입 페이지" />
+  <meta property="og:image" content="./images/og-kakaopay.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png" />
+  <meta name="msapplication-TileImage" content="./images/favicon/ms-icon-150x150.png" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
 
-  <div class="example">
+  <div class="page-example">
     <h1 class="kp-title">회원가입</h1>
     <form class="example-form"></form>
   </div>
 
-  <script src="assets/js/TextInput.js"></script>
-  <script src="assets/js/RadioGroup.js"></script>
-  <script src="assets/js/Selectbox.js"></script>
-  <script src="assets/js/Button.js"></script>
-  <script src="assets/js/Switch.js"></script>
-  <script src="assets/js/example.js"></script>
+  <!-- 각 컴포넌트 불러오기 -->
+  <script src="./assets/js/components/TextInput.js"></script>
+  <script src="./assets/js/components/Selectbox.js"></script>
+  <script src="./assets/js/components/RadioGroup.js"></script>
+  <script src="./assets/js/components/Switch.js"></script>
+  <script src="./assets/js/components/Button.js"></script>
+
+  <!-- 예제 영역 생성 -->
+  <script src="./assets/js/examplePage.js"></script>
 
 </body>
 

@@ -1,3 +1,5 @@
+// ** common.js
+
 // 마크업 코드 생성
 const generateCode = (target, stopTidy) => {
 

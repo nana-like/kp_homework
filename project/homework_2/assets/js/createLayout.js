@@ -166,7 +166,7 @@ const layoutDemo = [{
   {
     id: "lyDemo6",
     title: "Margin",
-    desc: "요소의 위나 아래에 마진값을 주려면 <code>.kp-m-{top 또는 bottom}</code> 클래스를 사용합니다. 해당 클래스 뒤에 <code>-{md/lg}</code> 를 붙이면 그 값이 더 커집니다.",
+    desc: "요소의 위나 아래에 여백을 주려면 <code>.kp-m-{top 또는 bottom}</code> 클래스를 사용합니다. 해당 클래스 뒤에 <code>-{md/lg}</code> 를 붙이면 그 값이 더 커집니다.",
     elem: layout6()
   }
 ]

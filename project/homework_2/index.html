@@ -2,25 +2,40 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TEST</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+  <title>컴포넌트 가이드</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta property="og:site_name" content="컴포넌트 가이드" />
+  <meta property="og:title" content="컴포넌트 가이드" />
+  <meta property="og:description" content="사내 UI 컴포넌트 Code SET" />
+  <meta property="og:image" content="./images/og-kakaopay.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png" />
+  <meta name="msapplication-TileImage" content="./images/favicon/ms-icon-150x150.png" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-  <div class="wrap">
+  <div class="page-components">
+
     <header class="header">
       <div class="header__container">
         <h1 class="title">
           <img src="./assets/images/kp-logo.png" alt="Kakao Pay" class="logo" />
           <span class="title__text">컴포넌트 가이드</span>
         </h1>
-        <div class="version">ver.1</div>
+        <div class="header__version">ver.1</div>
       </div>
     </header>
+
     <main class="main">
+
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item">
@@ -43,56 +58,56 @@
           </li>
         </ul>
       </nav>
+
       <div class="contents">
 
+        <!-- Text Inputs -->
         <div class="guide" id="textinput">
           <h2>Text Inputs</h2>
           <p>한 줄로 된 텍스트 인풋입니다. <code>.kp-input-item</code>으로 사용합니다. <code>.state-required</code> 또는
             <code>.state-error</code>클래스를 추가해 폼의 상태를 나타낼 수 있습니다. input 태그에 <code>disabled</code>나
             <code>readonly</code>같은 속성을 지정해 줄 수도 있습니다.</p>
-
           <div id="textinput-demos"></div>
         </div>
 
+        <!-- Selectbox -->
         <div class="guide" id="selectbox">
           <h2>Selectbox</h2>
           <p>옵션 목록이 나열되는 셀렉트 박스입니다. 너무 긴 레이블은 줄임 처리되므로, 한 줄에 표시되도록 간략하게 작성하는 것이 좋습니다. <code>.kp-selectbox</code>로
             사용합니다. select 태그에 <code>disabled</code> 속성을 지정해 줄 수도 있습니다.</p>
-
           <div id="selectbox-demos"></div>
         </div>
 
+        <!-- Radio Group -->
         <div class="guide" id="radiogroup">
           <h2>Radio Group</h2>
           <p>그룹 형태의 라디오 아이템입니다. <code>.kp-radio-group</code>으로
             사용합니다. input 태그에 <code>disabled</code> 속성을 지정해 줄 수도 있습니다.</p>
-
           <div id="radiogroup-demos"></div>
         </div>
 
+        <!-- Switch -->
         <div class="guide" id="switch">
           <h2>Switch</h2>
           <p>스위치 형태의 체크박스 아이템입니다. <code>.kp-switch</code>로
             사용합니다. input 태그에 <code>disabled</code> 속성을 지정해 줄 수도 있습니다.</p>
-
           <div id="switch-demos"></div>
         </div>
 
+        <!-- Buttons -->
         <div class="guide" id="btn">
           <h2>Buttons</h2>
           <p>범용 버튼입니다.<code>.kp-btn</code>으로
             사용합니다.</p>
-
           <div id="btn-demos"></div>
         </div>
 
+        <!-- Layout -->
         <div class="guide" id="layout">
           <h2>Layout</h2>
           <p>컴포넌트를 조합해 아래와 같은 레이아웃을 만들 수 있습니다.</p>
-
           <div id="layout-demos"></div>
         </div>
-
 
         <div class="more">
           <div class="more__guide">
@@ -101,17 +116,21 @@
         </div>
 
       </div>
+
     </main>
+
     <footer class="footer">
       <div class="footer__container">
-        <img src="./assets/images/kp-logo-gray.png" alt="Kakao Pay" class="logo" />
+        <img src="./assets/images/kp-logo-gray.png" alt="Kakao Pay" class="footer__logo" />
         <div class="footer__copy">© 2020</div>
       </div>
     </footer>
 
   </div>
 
-  <script src="assets/js/vendor/tidy.min.js"></script>
+  <!-- 외부 라이브러리 -->
+  <script src="./assets/js/vendor/tidy.min.js"></script>
+  <script src="./assets/js/vendor/highlight-9_5_0.min.js"></script>
   <script>
     var tidyOptions = {
       "indent": true,
@@ -123,23 +142,23 @@
       "show-info": false,
       "show-warnings": "no",
       "show-errors": 0,
-      "quiet": "yes",
-      // "new-blocklevel-tags": "label",
-      // "output-html": "yes",
-      // "wrap-attributes": "yes"
-      // "punctuation-wrap": "yes"
+      "quiet": "yes"
     }
   </script>
-  <script src="assets/js/common.js"></script>
-  <script src="assets/js/TextInput.js"></script>
-  <script src="assets/js/Selectbox.js"></script>
-  <script src="assets/js/RadioGroup.js"></script>
-  <script src="assets/js/Switch.js"></script>
-  <script src="assets/js/Button.js"></script>
-  <script src="assets/js/Layout.js"></script>
-  <script src="assets/js/main.js"></script>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+  <!-- 기본 스크립트 -->
+  <script src="./assets/js/common.js"></script>
+
+  <!-- 각 컴포넌트 불러오기 -->
+  <script src="./assets/js/components/TextInput.js"></script>
+  <script src="./assets/js/components/Selectbox.js"></script>
+  <script src="./assets/js/components/RadioGroup.js"></script>
+  <script src="./assets/js/components/Switch.js"></script>
+  <script src="./assets/js/components/Button.js"></script>
+
+  <!-- 레이아웃 및 데모 영역 생성 -->
+  <script src="./assets/js/createLayout.js"></script>
+  <script src="./assets/js/createDemo.js"></script>
 
   <script>
     hljs.initHighlightingOnLoad();
