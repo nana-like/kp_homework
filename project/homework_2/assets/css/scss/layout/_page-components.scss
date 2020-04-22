@@ -1,4 +1,4 @@
-// ** common.scss
+// ** page-components.scss
 
 // 사용자 정의 속성
 :root {
@@ -10,17 +10,7 @@
   --yellow: #fff8ad;
 }
 
-// html {
-//   @include res {
-//     font-size: 59%;
-//   }
-// }
-
-body {
-  font-size: 1.5rem;
-}
-
-.wrap {
+.page-components {
 
   .header {
     min-width: var(--minW);
@@ -47,20 +37,20 @@ body {
 
     .title {
       margin-top: -6px;
+
+      .logo {
+        display: inline-block;
+        margin: 4px 4px 0 0;
+        width: 58px;
+        vertical-align: middle;
+      }
+
+      &__text {
+        font-size: 2.1rem;
+      }
     }
 
-    .logo {
-      display: inline-block;
-      margin: 4px 4px 0 0;
-      width: 58px;
-      vertical-align: middle;
-    }
-
-    .title__text {
-      font-size: 2.1rem;
-    }
-
-    .version {
+    &__version {
       opacity: 0.8;
       font-size: 90%;
       color: var(--gray);
@@ -69,13 +59,6 @@ body {
   }
 
   .main {
-    // display: grid;
-    // column-gap: 20px;
-    // grid-template-columns: 180px minmax(420px, 1fr);
-    // max-width: var(--maxW);
-    // min-width: var(--minW);
-    // margin: 40px auto 40px;
-    // padding: 0 30px;
 
     @include flexbox();
     max-width: var(--maxW);
@@ -111,10 +94,21 @@ body {
     text-align: left;
 
     .hljs {
-
       padding: 20px 30px;
     }
   }
+
+  .more {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    text-align: center;
+
+    .more__link {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+  }
+
 }
 
 
@@ -248,21 +242,14 @@ body {
   }
 }
 
-.more {
-  margin-top: 80px;
-  margin-bottom: 80px;
-  text-align: center;
-
-  .more__link {
-    color: var(--blue);
-    text-decoration: underline;
-  }
-}
-
 .footer {
   min-width: var(--minW);
   color: #999;
   background: #1e1e1e;
+
+  &__logo {
+    width: 64px;
+  }
 
   &__container {
     height: 100%;
@@ -278,16 +265,4 @@ body {
     }
   }
 
-  .logo {
-    width: 64px;
-  }
-
-
-}
-
-
-.example {
-  max-width: var(--maxW);
-  padding: 0 30px;
-  margin: 0 auto;
 }
