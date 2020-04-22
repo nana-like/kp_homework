@@ -10,7 +10,6 @@ class Button {
       btnType,
       attribute = "",
       text = "버튼"
-      //size
     } = param;
 
     this.elem = document.createElement("BUTTON");

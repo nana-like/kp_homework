@@ -7,8 +7,7 @@ class Switch {
     switchID++;
     const {
       ariaLabel,
-      attribute = "",
-      //size
+      attribute = ""
     } = param;
 
     this.elem = document.createElement("div");
