@@ -38,4 +38,5 @@ const scrollHandler = () => {
 };
 
 window.addEventListener("load", signOnEvent);
+window.addEventListener("resize", signOnEvent);
 window.addEventListener("scroll", scrollHandler);
