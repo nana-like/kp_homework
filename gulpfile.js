@@ -168,7 +168,7 @@ gulp.task("browserSync:h1", function () {
 });
 
 
-
+// Gulp 개별 Task 목록
 gulp.task(
   "sass:h1",
   function () {
@@ -210,7 +210,7 @@ gulp.task(
   }
 )
 
-
+// Gulp Task : watch
 gulp.task("watch:h1", function () {
   gulp.watch(
     root.h1 + "/_src/_scss/**/*.scss", {
@@ -239,9 +239,9 @@ gulp.task("watch:h1", function () {
 });
 
 
-// ------
 
 
+// Gulp 개별 Task 목록
 gulp.task(
   "sass:h2",
   function () {
@@ -260,9 +260,7 @@ gulp.task("browserSync:h2", function () {
   });
 });
 
-
-
-
+// Gulp Task : watch
 gulp.task("watch:h2", function () {
   gulp.watch(
     root.h2 + "/assets/css/scss/**/*.scss", {
@@ -270,24 +268,6 @@ gulp.task("watch:h2", function () {
     },
     ["sass:h2"]
   );
-  // gulp.watch(
-  //   root.h1 + "/_src/_html/**/*.html", {
-  //     interval: 100
-  //   },
-  //   ["htmlInclude:h1", "reload"]
-  // );
-  // gulp.watch(
-  //   root.h1 + "/_src/_images/*", {
-  //     interval: 800
-  //   },
-  //   ["imageMinify:h1"]
-  // );
-  // gulp.watch(
-  //   root.h1 + "/_src/_js/*", {
-  //     interval: 800
-  //   },
-  //   ["combineJS:h1"]
-  // );
 });
 
 gulp.task(
