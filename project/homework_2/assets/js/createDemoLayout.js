@@ -163,7 +163,7 @@ const createDemoLayout = () => {
     {
       id: "lyDemo5",
       title: "그룹 타이틀",
-      desc: "상위 요소에게 <code>.kp-group</code> 클래스를 추가하고, 그 하위에 <code>.kp-group-title</code> 클래스의 요소를 추가합니다.",
+      desc: "상위 요소에게 <code>.kp-group</code> 클래스를 추가하고, 그 바로 하위에 <code>.kp-group-title</code> 클래스를 갖는 요소를 추가합니다.",
       elem: layout5()
     },
     {

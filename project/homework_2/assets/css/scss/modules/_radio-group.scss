@@ -62,6 +62,10 @@
       color: rgba(0, 0, 0, 0.4);
       background-color: $CL-disabled-bg;
     }
+
+    &:focus+.radio-label {
+      color: $CL-focus;
+    }
   }
 
   .radio-label {

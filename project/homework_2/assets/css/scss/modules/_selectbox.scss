@@ -5,7 +5,7 @@
   position: relative;
   display: inline-block;
   font-size: 14px;
-  min-width: 74px;
+  min-width: 90px;
 
   .kp-select-wrap {
     -webkit-appearance: none;
@@ -39,6 +39,11 @@
       @include pointer-none;
       background-color: $CL-disabled-bg;
     }
+  }
+
+  select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
   }
 
 

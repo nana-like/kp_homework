@@ -35,10 +35,10 @@ class RadioGroup {
     `;
     }
     if (checkedIndex >= 0) {
-      this.labelGroup.children[checkedIndex].children[0].checked = true;
+      this.labelGroup.children[checkedIndex].children[0].setAttribute('checked', 'checked');
     }
     if (disabledIndex >= 0) {
-      this.labelGroup.children[disabledIndex].children[0].disabled = true;
+      this.labelGroup.children[disabledIndex].children[0].setAttribute('disabled', 'disabled');
     }
     this.elem.appendChild(this.labelGroup);
     return this.elem;
@@ -57,7 +57,7 @@ const radioGroupOptions = {
   },
   withDisabled: {
     labels: ["라디오 버튼1", "라디오 버튼 2", "사용할 수 없는 라디오 버튼3", "라디오 버튼4"],
-    checkedIndex: 1,
+    checkedIndex: 3,
     disabledIndex: 2
   }
 }

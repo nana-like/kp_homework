@@ -211,6 +211,10 @@ input[readonly] {
   -webkit-text-fill-color: inherit;
 }
 
+button::-moz-focus-inner {
+  border: 0;
+}
+
 
 html {
   position: relative;

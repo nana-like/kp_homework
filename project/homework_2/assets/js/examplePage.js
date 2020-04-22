@@ -149,7 +149,8 @@ const createExamplePage = () => {
     const elem = document.createElement("div");
     const btnJoin = new Button({
       btnType: "primary",
-      text: "가입하기"
+      text: "가입하기",
+      attribute: "tabIndex"
     });
 
     elem.classList.add("kp-line");

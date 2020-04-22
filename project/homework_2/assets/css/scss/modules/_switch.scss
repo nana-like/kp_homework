@@ -37,6 +37,10 @@
   input[type=checkbox] {
     @include invisible;
 
+    &:focus+.switch-wrap {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
     // 👋 체크된 경우
     &:checked+.switch-wrap {
       background-color: $CL-focus;

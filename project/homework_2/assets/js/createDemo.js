@@ -24,13 +24,13 @@ const createDemo = () => {
     {
       id: "inputdemo2",
       title: "Required",
-      desc: "<code>state-required</code> 클래스를 추가합니다. 필요한 경우 <code>required</code> 속성을 추가합니다.",
+      desc: "<code>.state-required</code> 클래스를 추가합니다. 필요한 경우 <code>required</code> 속성을 추가합니다.",
       elem: new TextInput(textInputOptions.required)
     },
     {
       id: "inputdemo3",
       title: "Error & Required",
-      desc: "<code>state-error</code> 클래스와 <code>state-required</code> 클래스를 추가합니다. 필요한 경우 <code>required</code> 속성을 추가합니다.",
+      desc: "<code>.state-error</code> 클래스와 <code>.state-required</code> 클래스를 추가합니다. 필요한 경우 <code>required</code> 속성을 추가합니다.",
       elem: new TextInput(textInputOptions.requiredError)
     },
     {
