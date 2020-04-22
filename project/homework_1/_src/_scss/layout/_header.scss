@@ -75,12 +75,10 @@
     top: getPercent(-160);
     left: 0;
     overflow: hidden;
+    visibility: hidden;
 
     &:before,
     &:after {
-      @include animation(spark-show, 0.4s);
-      animation-fill-mode: forwards;
-      animation-delay: 600ms;
       transform-origin: 100% 100%;
       transform: scale(0);
     }
@@ -103,7 +101,27 @@
       content: "";
       @include percentSize(160, 160);
       @include bgi("#{$_imgName}-neon-spark-2");
+      // animation-delay: 630ms;
+    }
+  }
+}
+
+// 이미지가 로드된 경우 애니메이션 실행
+.loaded {
+
+  .header__spark {
+    visibility: visible;
+
+    &:before {
+      @include animation(spark-show, 0.4s);
+      animation-delay: 600ms;
+      animation-fill-mode: forwards;
+    }
+
+    &:after {
+      @include animation(spark-show, 0.4s);
       animation-delay: 630ms;
+      animation-fill-mode: forwards;
     }
   }
 }

@@ -14,6 +14,7 @@ const pageEvent = {
 }
 
 const loadHandler = () => {
+  document.body.classList.add("loaded");
   btnApply.addEventListener("click", pageEvent.open);
   btnClose.addEventListener("click", pageEvent.close);
 }

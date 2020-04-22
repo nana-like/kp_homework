@@ -41,6 +41,7 @@
 
 // 최초 진입 시 떨어지는 동전들
 .deco-coins-drop {
+  visibility: hidden;
   @include pointer-none;
   @include select-none;
   z-index: $Z-COIN-DROP;
@@ -49,8 +50,6 @@
   top: 0;
   left: 50%;
   width: 100%;
-  animation: coin-drop-show 900ms;
-  animation-fill-mode: forwards;
 
   // 이미지 네임
   $_imgName: "deco-coins-drop";
@@ -87,8 +86,7 @@
 
   .fixed-coins {
     position: absolute;
-    animation-name: coin-fixed-show;
-    animation-fill-mode: both;
+    visibility: hidden;
   }
 
   .fixed-coins--1 {
@@ -123,4 +121,21 @@
   margin-top: getPercent(25);
   @include percentSize(750, 184);
   @include bgi("deco-coins-bottom");
+}
+
+
+// 이미지가 로드된 경우 애니메이션 실행
+.loaded {
+
+  .deco-coins-drop {
+    visibility: visible;
+    animation: coin-drop-show 900ms;
+    animation-fill-mode: forwards;
+  }
+
+  .fixed-coins {
+    visibility: visible;
+    animation-name: coin-fixed-show;
+    animation-fill-mode: both;
+  }
 }
