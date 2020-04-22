@@ -8,13 +8,14 @@ Gulp.js 로 작업하였으며, 현재 경로에서 아래 명령어로 실행�
 
 ```shell
 # 설치
-$ npm install -D
+$ npm install yarn
+$ yarn install
 
 # homework_1 웹서버 실행
-$ npm run start:h1
+$ yarn start:h1
 
 # homework_2 웹서버 실행
-$ npm run start:h2
+$ yarn start:h2
 ```
 
 ## 폴더 구조

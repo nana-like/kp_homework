@@ -16,8 +16,8 @@ nykim@nykim.net
 
 ```shell
 # 설치
-$ npm install
+$ yarn install
 
 # homework_1에 대한 태스크 실행
-$ npm run gulp:h2
+$ yarn gulp:h2
 ```
