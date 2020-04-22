@@ -17,7 +17,7 @@ class Switch {
 
     // 어트리뷰트가 있는 경우
     if (attribute) {
-      this.elem.children[0].setAttribute(`${attribute}`, true);
+      this.elem.children[0].setAttribute(`${attribute}`, `${attribute}`);
     }
 
     this.elem.innerHTML += `

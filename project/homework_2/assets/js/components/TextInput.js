@@ -25,9 +25,12 @@ class TextInput {
     if (label) {
       this.elem.innerHTML += `<label for="test${inputID}">${label}</label>`;
     }
-
     this.elem.innerHTML += `<input id="test${inputID}" type="${type}" placeholder="${placeholder}" value="${value}" /><div class="explain"></div>
     `;
+
+    if (type === "password") {
+      this.elem.children[1].setAttribute("autocomplete", "on");
+    }
 
     // 상태가 설정된 경우
     if (state) {
@@ -36,7 +39,7 @@ class TextInput {
 
     // 어트리뷰트가 있는 경우
     if (attribute) {
-      this.elem.children[1].setAttribute(`${attribute}`, true);
+      this.elem.children[1].setAttribute(`${attribute}`, `${attribute}`);
     }
 
     // 에러인 경우

@@ -29,7 +29,7 @@ class Selectbox {
 
     // 어트리뷰트가 있는 경우
     if (attribute) {
-      this.elem.children[0].setAttribute(`${attribute}`, true);
+      this.elem.children[0].setAttribute(`${attribute}`, `${attribute}`);
     }
 
     return this.elem;
@@ -43,7 +43,7 @@ const selectboxOptions = {
     values: ["opt1", "opt2", "opt3"]
   },
   disabled: {
-    labels: ["선택할 수 없는 옵션", "두 번째 옵션", "세 번째 옵션"],
+    labels: ["선택할 수 없는 셀렉트 박스", "두 번째 옵션", "세 번째 옵션"],
     values: ["opt1", "opt2", "opt3"],
     attribute: "disabled",
   },

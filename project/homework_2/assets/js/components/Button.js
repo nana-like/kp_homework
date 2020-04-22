@@ -19,7 +19,7 @@ class Button {
       this.elem.classList.add(`btn-${btnType}`);
     }
     if (attribute) {
-      this.elem.setAttribute(`${attribute}`, true);
+      this.elem.setAttribute(`${attribute}`, `${attribute}`);
     }
     this.elem.innerHTML = text;
 

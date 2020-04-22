@@ -25,8 +25,7 @@ const createExamplePage = () => {
       label: "비밀번호",
       type: "password",
       placeholder: "사용할 비밀번호를 입력해 주세요",
-      value: "hello_world",
-      attribute: "autocomplete"
+      value: "hello_world"
     });
 
     elem.classList.add("kp-line");
