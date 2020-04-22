@@ -96,7 +96,7 @@
     margin-top: getPercent(270);
     @include percentSize(750, 269);
     @include bgi("#{$_imgName}-1");
-    animation-duration: 550ms;
+    animation-duration: 540ms;
   }
 
   .fixed-coins--2 {
@@ -104,7 +104,7 @@
     margin-top: getPercent(470);
     @include percentSize(750, 144);
     @include bgi("deco-coins-fixed-2");
-    animation-duration: 450ms;
+    animation-duration: 440ms;
   }
 
   .fixed-coins--3 {
@@ -112,7 +112,7 @@
     margin-top: getPercent(600);
     @include percentSize(750, 211);
     @include bgi("deco-coins-fixed-3");
-    animation-duration: 650ms;
+    animation-duration: 640ms;
   }
 }
 
