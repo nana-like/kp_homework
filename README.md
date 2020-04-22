@@ -1,4 +1,6 @@
-# Homework
+# kp_homework
+
+nykim@nykim.net
 
 ## 프로젝트 실행
 
@@ -35,7 +37,8 @@ $ npm run start:h2
 │       ├── assets
 │       │   ├── css
 │       │   ├── images
-│       ├── html
+│       │   └── js
+│       ├── example.html
 │       ├── index.html
 │       └── README.md
 ├── gulpfile.js

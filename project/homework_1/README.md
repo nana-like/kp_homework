@@ -1,4 +1,4 @@
-# Homework 1
+# homework_1
 
 > 모바일 프로모션 페이지 개발
 

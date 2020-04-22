@@ -1,4 +1,4 @@
-# Homework 2
+# homework_2
 
 > 사내 시스템 개발을 위한 UI 컴포넌트 개발
 
