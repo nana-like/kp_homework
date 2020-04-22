@@ -4,16 +4,16 @@ nykim@nykim.net
 
 ## 프로젝트 실행
 
-Gulp.js 로 작업하였으며, 아래 명령어로 실행할 수 있습니다.
+Gulp.js 로 작업하였으며, 현재 경로에서 아래 명령어로 실행할 수 있습니다.
 
 ```shell
 # 설치
 $ npm install -D
 
-# homework_1 웹서버
+# homework_1 웹서버 실행
 $ npm run start:h1
 
-# homework_2 웹서버
+# homework_2 웹서버 실행
 $ npm run start:h2
 ```
 
