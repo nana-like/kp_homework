@@ -33,13 +33,12 @@
 
 // 이벤트 영역
 .event {
-
   //로컬 경로
-  $_path-image: $PATH-IMAGE+"page-event/";
+  $_path-image: $PATH-IMAGE + "page-event/";
   $_imgName: event;
 
   //로컬 믹스인
-  @mixin _bgi($imageName, $type:"png") {
+  @mixin _bgi($imageName, $type: "png") {
     background-image: url(#{$_path-image}#{$imageName}.#{$type});
     background-repeat: no-repeat;
     background-size: 100%;
@@ -142,8 +141,6 @@
   }
 }
 
-
-
 // 👋 이벤트 화면이 보여지는 경우
 .-event-show {
   overflow-y: hidden;
@@ -175,16 +172,14 @@
   // 위에서 내려오는 애니메이션
   .event__top {
     @include animation(event-page-show-top, 550ms);
-    // animation-fill-mode: initial; //? doesn't work at safari
     transform: translateY(0%);
   }
 
   // 아래에서 올라가는 애니메이션
   .event__bottom {
     @include animation(event-page-show-bottom, 550ms);
-    transform: translateY(0%)
+    transform: translateY(0%);
   }
-
 
   // 이벤트 화면의 메인 버튼 표시
   .main-btn-transfer {
@@ -196,5 +191,4 @@
     transform: translateY(0%);
     transition-delay: 200ms;
   }
-
 }

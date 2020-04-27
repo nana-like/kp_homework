@@ -101,14 +101,12 @@
       content: "";
       @include percentSize(160, 160);
       @include bgi("#{$_imgName}-neon-spark-2");
-      // animation-delay: 630ms;
     }
   }
 }
 
 // 이미지가 로드된 경우 애니메이션 실행
 .loaded {
-
   .header__spark {
     visibility: visible;
 
