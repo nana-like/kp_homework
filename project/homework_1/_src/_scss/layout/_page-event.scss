@@ -98,6 +98,7 @@
     position: relative;
     transform: translateY(-100%);
     transition: transform 250ms;
+    animation-fill-mode: forwards;
   }
 
   // 위쪽 영역 실질 이미지
@@ -173,12 +174,16 @@
   .event__top {
     @include animation(event-page-show-top, 550ms);
     transform: translateY(0%);
+    -webkit-animation-fill-mode: none;
+    animation-fill-mode: none;
   }
 
   // 아래에서 올라가는 애니메이션
   .event__bottom {
     @include animation(event-page-show-bottom, 550ms);
     transform: translateY(0%);
+    -webkit-animation-fill-mode: none;
+    animation-fill-mode: none;
   }
 
   // 이벤트 화면의 메인 버튼 표시
@@ -190,5 +195,13 @@
   .btn-transfer {
     transform: translateY(0%);
     transition-delay: 200ms;
+  }
+}
+
+.-agent-safari.-event-show {
+  .event__top,
+  .event__bottom {
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
   }
 }
