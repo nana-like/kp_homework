@@ -18,6 +18,6 @@ nykim@nykim.net
 # 설치
 $ yarn install
 
-# homework_1에 대한 태스크 실행
+# homework_2에 대한 태스크 실행
 $ yarn gulp:h2
 ```
